@@ -28,6 +28,7 @@ public class MapScript : MonoBehaviour
                 GameObject PlacedTile = Instantiate(Tile, new Vector2(OffsetX, OffsetY), Quaternion.identity);
                 PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Water;
                 Temp = PlacedTile.GetComponent<SpriteRenderer>().bounds.size;
+                
             }
         }
     }
