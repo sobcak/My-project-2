@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
-     
+     kamera.orthographicSize = 3.7f;
     }
 
     // Update is called once per frame
