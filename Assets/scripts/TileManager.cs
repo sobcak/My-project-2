@@ -25,7 +25,7 @@ public class TileManager : MonoBehaviour
 
     void SetTerrainSprite()
     {
-        Debug.Log("ballsack32");
+        //Debug.Log("ballsack32");
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Terrain/{TerrainType}");
     }
 
