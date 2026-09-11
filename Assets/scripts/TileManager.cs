@@ -11,13 +11,14 @@ public class TileManager : MonoBehaviour
     public TerrainType TerrainType;
     public BuildingType BuildingType;
     public float BuildingOffset;
-    
+    GameObject spawnedObjectPrefab;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // Attach the BuildingDisplayer to self with custom x coordinates :)
         Vector3 position = new Vector3(transform.position.x, transform.position.y + BuildingOffset, transform.position.z);
-        Instantiate(objectPrefab, position, Quaternion.identity);
+        spawnedObjectPrefab =  Instantiate(objectPrefab, position, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -28,9 +29,9 @@ public class TileManager : MonoBehaviour
 
     void SetSpriteForBuilding(BuildingType buildingType) // set the sprite of the buildingDisplayer with spriterenderer to some sprite at specific location
     {
-        
+
         //TODO If not displaying maybe the path is wrong don't forgor
-            objectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buildings/" + BuildingType);
+        spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buildings/" + BuildingType);
     }
 }
 

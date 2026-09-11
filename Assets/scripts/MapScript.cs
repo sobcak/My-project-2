@@ -23,6 +23,7 @@ public class MapScript : MonoBehaviour
                 float OffsetX = (x - y) * (scale.x / 2f);
                 float OffsetY = (x + y) * (scale.y / 4f);
                 GameObject PlacedTile = Instantiate(Tile, new Vector2(OffsetX, OffsetY), Quaternion.identity);
+                PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Water;
             }
         }
     }
