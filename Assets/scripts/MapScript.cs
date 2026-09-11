@@ -6,6 +6,8 @@ public class MapScript : MonoBehaviour
     [SerializeField] private int MapWidth, MapHeight;
     [SerializeField] private GameObject Tile;
     Vector2 scale;
+    Vector2 Temp;
+
 
 
     private void Awake()
@@ -20,10 +22,12 @@ public class MapScript : MonoBehaviour
         for (int x = MapWidth; x >= 0; x--)
         {
             for (int y = MapHeight; y >= 0; y--) {
+
                 float OffsetX = (x - y) * (scale.x / 2f);
                 float OffsetY = (x + y) * (scale.y / 4f);
                 GameObject PlacedTile = Instantiate(Tile, new Vector2(OffsetX, OffsetY), Quaternion.identity);
                 PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Water;
+                Temp = PlacedTile.GetComponent<SpriteRenderer>().bounds.size;
             }
         }
     }
