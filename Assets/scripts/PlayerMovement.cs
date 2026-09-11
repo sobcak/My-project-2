@@ -18,6 +18,10 @@ public class PlayerMovement : MonoBehaviour
         Vector2 direction = new Vector2(xInput, yInput).normalized;
         body.velocity = direction * speed;
 
+<<<<<<< HEAD
+=======
+        body.linearVelocity = new Vector2(xInput, yInput);
+>>>>>>> 5f96bfa4ccf501d62049e0c454d1c927ab95efa9
    
  }
 }

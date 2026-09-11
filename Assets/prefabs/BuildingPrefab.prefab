@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 780747960939362892}
   - component: {fileID: 3155525307618683081}
   - component: {fileID: 6619587136806539960}
+  - component: {fileID: 4141309167156699363}
   m_Layer: 0
   m_Name: BuildingPrefab
   m_TagString: Untagged
@@ -139,3 +140,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.0001, y: 0.0001}
   m_EdgeRadius: 0
+--- !u!114 &4141309167156699363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589294960030321840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa51e3e52f3d2f4587751ef87dca87b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TileManager
+  objectPrefab: {fileID: 0}
+  HasBuilding: 0
+  TerrainType: 0
+  BuildingType: 0
+  BuildingOffset: 0

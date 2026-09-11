@@ -287,7 +287,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapScript
   MapWidth: 50
   MapHeight: 50
-  Tile: {fileID: 3333551018598464604, guid: 7f1e95920a9541647a5d33706f8eb7f5, type: 3}
+  Tile: {fileID: 8589294960030321840, guid: d1e01b6a47528934fb2d857f08241734, type: 3}
 --- !u!4 &341871236
 Transform:
   m_ObjectHideFlags: 0
