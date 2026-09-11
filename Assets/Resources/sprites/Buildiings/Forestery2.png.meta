@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 594e3c7fec3bddc40be6aad2ad70dc6b
+guid: dbf2e2cf130c4d6448796ffa980cce28
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4388664141093010523
-    second: Forestery_0
+      213: -7054430540734768538
+    second: Forestery2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,7 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Forestery_0
+      name: Forestery2_0
       rect:
         serializedVersion: 2
         x: 2
@@ -117,8 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a308af37355813c0800000000000000
-      internalID: -4388664141093010523
+      spriteID: 66a56d69cc0a91e90800000000000000
+      internalID: -7054430540734768538
       vertices: []
       indices: 
       edges: []
@@ -137,7 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Forestery_0: -4388664141093010523
+      Forestery2_0: -7054430540734768538
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
