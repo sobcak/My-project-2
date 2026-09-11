@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public float speed;
     public Rigidbody2D body;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,8 +15,9 @@ public class PlayerMovement : MonoBehaviour
     {
         float xInput = Input.GetAxis("Horizontal");
         float yInput = Input.GetAxis("Vertical");
+        Vector2 direction = new Vector2(xInput, yInput).normalized;
+        body.velocity = direction * speed;
 
-        body.velocity = new Vector2(xInput, yInput);
    
  }
 }
