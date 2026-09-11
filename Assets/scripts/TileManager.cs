@@ -14,17 +14,19 @@ public class TileManager : MonoBehaviour
     GameObject spawnedObjectPrefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
         // Attach the BuildingDisplayer to self with custom x coordinates :)
         Vector3 position = new Vector3(transform.position.x, transform.position.y + BuildingOffset, transform.position.z);
         spawnedObjectPrefab =  Instantiate(objectPrefab, position, Quaternion.identity);
+        SetTerrainSprite();
     }
 
-    // Update is called once per frame
-    void Update()
+
+    void SetTerrainSprite()
     {
-        
+        Debug.Log("ballsack32");
+        GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Terrain/{TerrainType}");
     }
 
     void SetSpriteForBuilding(BuildingType buildingType) // set the sprite of the buildingDisplayer with spriterenderer to some sprite at specific location
