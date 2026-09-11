@@ -14,6 +14,7 @@ public class CycleScript : MonoBehaviour
     
     [SerializeField] private GameObject triggerBox;
     int timer = 0;
+    private GameObject temp;
 
 
 
@@ -28,43 +29,62 @@ public class CycleScript : MonoBehaviour
 
         if (timer == 50)
         {
-            Instantiate(triggerBox, GetAJobtrigger, Quaternion.identity);
-            Destroy(triggerBox);
+            GameObject temp = Instantiate(triggerBox, GetAJobtrigger, Quaternion.identity);
+        }
+
+        if (timer == 55)
+        {
+            DestroyImmediate(temp, true);
         }
 
         if (timer == 100)
         {
-            Instantiate(triggerBox, Eattrigger, Quaternion.identity);
-            Destroy(triggerBox);
-
+            GameObject temp = Instantiate(triggerBox, Eattrigger, Quaternion.identity);
+        }
+        if (timer == 105)
+        {
+            DestroyImmediate(temp, true);
         }
 
         if (timer == 150)
         {
-            Instantiate(triggerBox, Worktrigger, Quaternion.identity);
-            Destroy(triggerBox);
+            GameObject temp = Instantiate(triggerBox, Worktrigger, Quaternion.identity);
+        }
+
+        if (timer == 155)
+        {
+            DestroyImmediate(temp, true);
 
         }
+        
         if (timer == 350)
         {
-            Instantiate(triggerBox, Dietrigger, Quaternion.identity);
-            Destroy(triggerBox);
-
+            GameObject temp = Instantiate(triggerBox, Dietrigger, Quaternion.identity);
         }
+
+        if (timer == 355)
+        {
+            DestroyImmediate(temp, true);
+        }
+        
         if (timer == 400)
         {
-            Instantiate(triggerBox, Kidstrigger, Quaternion.identity);
-            Destroy(triggerBox);
+            GameObject temp = Instantiate(triggerBox, Kidstrigger, Quaternion.identity);
+        }
 
+        if (timer == 405)
+        {
+            DestroyImmediate(temp, true);
         }
 
         if (timer == 450)
         {
-            Instantiate(triggerBox, Updatetrigger, Quaternion.identity);
-            Destroy(triggerBox);
-
+            GameObject temp = Instantiate(triggerBox, Updatetrigger, Quaternion.identity);
         }
-        
+        if(timer == 455)
+        {
+            DestroyImmediate(temp, true);
+        }
     }
     
 }
