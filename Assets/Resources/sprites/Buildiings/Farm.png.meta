@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ffb3341921ea4114c8cdc5376283f82d
+guid: 7f1829dc93a991d4692ecd83458d9763
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7135234291683630116
-    second: DomekGJ_0
+      213: -4057977143843180069
+    second: Farm_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DomekGJ_0
+      name: Farm_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 3
+        y: 3
+        width: 26
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd3e20f373e8afc90800000000000000
-      internalID: -7135234291683630116
+      spriteID: bd1b29aa94b2fa7c0800000000000000
+      internalID: -4057977143843180069
       vertices: []
       indices: 
       edges: []
@@ -137,7 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DomekGJ_0: -7135234291683630116
+      Farm_0: -4057977143843180069
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

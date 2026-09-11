@@ -1,7 +1,12 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/prefabs/Camera.prefab.meta
+guid: 08e6cc970ae163f74b1806b34e3b41f3
+PrefabImporter:
+========
 guid: f5b841b819812fc4f8bb5fd408cff775
 folderAsset: yes
 DefaultImporter:
+>>>>>>>> cbac5665538aadc63fb8e1f071bf4a069db924af:Assets/Resources/sprites/Buildiings.meta
   externalObjects: {}
   userData: 
   assetBundleName: 
