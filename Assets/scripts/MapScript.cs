@@ -14,13 +14,12 @@ public class MapScript : MonoBehaviour
 
     void StartGeneration()
     {
-        for(int x = MapWidth; x >= 0; x++)
+        for (int x = MapWidth; x >= 0; x--)
         {
-            for(int y = MapHeight; x >= 0; y++)
-            {
-                float OffsetX = (x + y) / 2;
-                float OffsetY = (x - y) / 4;
-                GameObject PlacedTile = Instantiate(Tile, new Vector3(OffsetX, OffsetY, 0), Quaternion.identity);
+            for (int y = MapHeight; y >= 0; y--) {
+                float OffsetX = (x - y) * (1 / 2f);
+                float OffsetY = (x + y) * (1 / 4f);
+                GameObject PlacedTile = Instantiate(Tile, new Vector2(OffsetX, OffsetY), Quaternion.identity);
             }
         }
     }
