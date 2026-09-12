@@ -141,7 +141,7 @@ public class BuildingManager : MonoBehaviour
         buildings.Sort((a, b) => a.Priority.CompareTo(b.Priority));
     }
     
-    public static void RegisterBuilding(Building b)
+    public static bool RegisterBuilding(Building b)
     {
         if (b != null)
             if(TryToBuild(b))
