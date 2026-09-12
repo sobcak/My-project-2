@@ -10,7 +10,7 @@ public class PerlinNoise : MonoBehaviour
     int height = 50;
     float scale = 0.05f;
 
-    const string ramp = "WPPS";
+    const string ramp = "PWPS";
 
     void Start()
     {
