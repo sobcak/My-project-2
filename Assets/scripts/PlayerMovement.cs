@@ -9,39 +9,35 @@ public class PlayerMovement : MonoBehaviour
     public Camera kamera;
     public float akcelerace;
 
+    private Vector2 moveInput;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Movement()
+    void FixedUpdate()
     {
-        float xInput = Input.GetAxis("Horizontal");
-        float yInput = Input.GetAxis("Vertical");
+Vector2 targetVelocity = moveInput * speed;
         
-        Vector2 direction = new Vector2(xInput, yInput).normalized;
-        body.linearVelocity = direction * (speed + akcelerace);
-    }
+        body.linearVelocity = Vector2.MoveTowards(body.linearVelocity, targetVelocity, akcelerace * Time.fixedDeltaTime);    }
     void CameraControlls()
     {
-        if (Input.GetKeyDown(KeyCode.O) && kamera.orthographicSize <= 10){
+        if (Input.GetKeyDown(KeyCode.O) && kamera.orthographicSize < 10){
             kamera.orthographicSize = kamera.orthographicSize + kameraDistance;
         }
-        else if (Input.GetKeyDown(KeyCode.P) && kamera.orthographicSize >= 1){
+        else if (Input.GetKeyDown(KeyCode.P) && kamera.orthographicSize > 4){
             kamera.orthographicSize = kamera.orthographicSize - kameraDistance;
         }
     }
     void Start()
     {
-     kamera.orthographicSize = 3.7f;
+     kamera.orthographicSize = 4f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Movement();
+
+        float xInput = Input.GetAxis("Horizontal");
+        float yInput = Input.GetAxis("Vertical");
+        moveInput = new Vector2(xInput, yInput).normalized;
         CameraControlls();
-        
-        
 
-        
-
-
- }
+    }
 }

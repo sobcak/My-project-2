@@ -19,20 +19,21 @@ public class TileManager : MonoBehaviour
         // Attach the BuildingDisplayer to self with custom x coordinates :)
         Vector3 position = new Vector3(transform.position.x, transform.position.y + BuildingOffset, transform.position.z);
         spawnedObjectPrefab =  Instantiate(objectPrefab, position, Quaternion.identity);
-        SetTerrainSprite();
+        
     }
 
 
-    void UpdateBuilding()
+    public void UpdateBuilding()
     {
         if (HasBuilding)
         {
             SetSpriteForBuilding(BuildingType);
+            Debug.Log("reached update");
         }
     }
 
 
-    void SetTerrainSprite()
+    public void SetTerrainSprite()
     {
         //Debug.Log("ballsack32");
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Terrain/{TerrainType}");
@@ -40,7 +41,7 @@ public class TileManager : MonoBehaviour
 
     void SetSpriteForBuilding(BuildingType buildingType) // set the sprite of the buildingDisplayer with spriterenderer to some sprite at specific location
     {
-        spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buildings/" + BuildingType);
+        spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Buildings/{BuildingType}");
     }
 
    

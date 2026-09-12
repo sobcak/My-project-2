@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
-guid: d19fd8ec0edd18743b58eec79a363c73
+guid: b634ed3deafa2db4f8d8fd8086c33b5b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 172622306924273287
-    second: Mine2_0
-========
-guid: 07a0e45705ccc782ab3271957f2da84a
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4619080980983763939
-    second: Play2_0
->>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
+      213: 6003510456942302204
+    second: Storage3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -111,17 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
-      name: Mine2_0
-========
-      name: Play2_0
->>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
+      name: Storage3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 16
+        x: 2
+        y: 2
+        width: 28
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,13 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
-      spriteID: 78e9784d217456200800000000000000
-      internalID: 172622306924273287
-========
-      spriteID: 3e3dc44eda54a1040800000000000000
-      internalID: 4619080980983763939
->>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
+      spriteID: cf3936fd3f0c05350800000000000000
+      internalID: 6003510456942302204
       vertices: []
       indices: 
       edges: []
@@ -155,11 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
-      Mine2_0: 172622306924273287
-========
-      Play2_0: 4619080980983763939
->>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
+      Storage3_0: 6003510456942302204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
