@@ -27,7 +27,6 @@ public class HumanManagerScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Triggered overlap with: " + other.name);
-        
         KillOldHuman();
         Age();
         HaveKids();
