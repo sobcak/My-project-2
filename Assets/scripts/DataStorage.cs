@@ -3,13 +3,23 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DataStorage", menuName = "Scriptable Objects/DataStorage")]
 public class DataStorage : ScriptableObject
 {
-    
+
+    /// <summary>
+    /// Important
+    public int CurrentEra = 1;
+
+    /// </summary>
+
+
+    // Constructed important buildings
+    public bool Chapple = true;
+    public bool School;
     
     // Global static reference
     public static DataStorage Instance { get; private set; }
 
-    public int NumberOfHumans;
-    public int AvailableFood = 0;
+    public int NumberOfHumans = 80;
+    public int AvailableFood = 200;
     public int AvailableHousing = 100;
     public int Workers;
 
@@ -17,6 +27,10 @@ public class DataStorage : ScriptableObject
     public int Wood = 100;
     public int brick;
 
+    // Luxury
+    public int Furniture = 50;
+    
+    
     
     public static void Initialize(DataStorage asset)
     {
