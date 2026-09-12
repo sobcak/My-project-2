@@ -58,9 +58,20 @@ public class BuildingFactory
         MaterialCost = (Wood: 10, Stone: 10, Bricks: 0),
         BonusSpace = 5
     };
-    
-    
-    
+    public static Building Forestry = new Building
+    {
+        BuildingType = BuildingType.Forestry,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 10, Stone: 5, Bricks: 0),
+        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 2, Stone: 0, Bricks: 0, Food: 0),
+        DesiredWorkforce = 5,
+        CurrentWorkforce = 0,
+        Priority = 2,
+    };
+
+
+
 }
 
 
