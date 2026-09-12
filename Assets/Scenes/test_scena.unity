@@ -492,7 +492,7 @@ MonoBehaviour:
   SearchRadius: 5
   RightClickInfoCanvas: {fileID: 1239338237}
   HasBuilding: {fileID: 454945558}
-  TerrainType: {fileID: 883131382}
+  TerrainType2: {fileID: 883131382}
   BuidlingType: {fileID: 37593280}
 --- !u!4 &326579176
 Transform:
@@ -1957,7 +1957,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -398.2304, y: 482.66016}
+  m_AnchoredPosition: {x: -398.23047, y: 482.66016}
   m_SizeDelta: {x: -878.77, y: -965.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1142691323
