@@ -537,7 +537,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 766.10004, y: -389.1997}
+  m_AnchoredPosition: {x: 766.10156, y: -389.19922}
   m_SizeDelta: {x: -1532.19, y: -778.41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &478765266
@@ -904,7 +904,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 705.95, y: 448.15}
+  m_AnchoredPosition: {x: 705.9492, y: 448.1504}
   m_SizeDelta: {x: -1411.89, y: -896.31}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &768542615
@@ -1212,7 +1212,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -398.22998, y: 482.66}
+  m_AnchoredPosition: {x: -398.23047, y: 482.66016}
   m_SizeDelta: {x: -878.77, y: -965.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1142691323
@@ -1835,7 +1835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 747.79, y: -372.45}
+  m_AnchoredPosition: {x: 747.78906, y: -372.44922}
   m_SizeDelta: {x: -1495.58, y: -744.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1700082978
@@ -1910,7 +1910,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 694.1, y: 434.57}
+  m_AnchoredPosition: {x: 694.10156, y: 434.5703}
   m_SizeDelta: {x: -1388.2, y: -869.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762757274
@@ -2076,7 +2076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ed66e0fe8d43fbfd99e433e28a282cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  speed: 15
+  speed: 5
   kameraDistance: 10
   body: {fileID: 1830205832}
   kamera: {fileID: 292897961}
