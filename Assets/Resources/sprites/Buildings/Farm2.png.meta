@@ -1,14 +1,19 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 71ffcceff74620c49b98f02d8fed947d
-=======
-guid: d22b0b7f6544f5b4fa0e9c04028d10a1
->>>>>>> 532872c6f345b2098a956f6f149a44abf425de0c
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Farm2.png.meta
+guid: 79f8775e4b756744383b159b5c403990
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -743673873284815403
-    second: Mine1_0
+      213: 4867684579368127790
+    second: Farm2_0
+========
+guid: a41b413d69187f04f82c9830c9404403
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6723288080331900861
+    second: farm1_0
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Resources/sprites/Buildiings/farm1.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +111,17 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mine1_0
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Farm2.png.meta
+      name: Farm2_0
+========
+      name: farm1_0
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Resources/sprites/Buildiings/farm1.png.meta
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 29
-        height: 18
+        x: 3
+        y: 3
+        width: 26
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,8 +130,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5d5ae1a6d80fda5f0800000000000000
-      internalID: -743673873284815403
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Farm2.png.meta
+      spriteID: e2d42e7b55d7d8340800000000000000
+      internalID: 4867684579368127790
+========
+      spriteID: db70dc633eaed4d50800000000000000
+      internalID: 6723288080331900861
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Resources/sprites/Buildiings/farm1.png.meta
       vertices: []
       indices: 
       edges: []
@@ -141,7 +155,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Mine1_0: -743673873284815403
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Farm2.png.meta
+      Farm2_0: 4867684579368127790
+========
+      farm1_0: 6723288080331900861
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Resources/sprites/Buildiings/farm1.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

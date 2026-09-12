@@ -23,6 +23,16 @@ public class TileManager : MonoBehaviour
     }
 
 
+    public void UpdateBuilding()
+    {
+        if (HasBuilding)
+        {
+            SetSpriteForBuilding(BuildingType);
+            Debug.Log("reached update");
+        }
+    }
+
+
     void SetTerrainSprite()
     {
         //Debug.Log("ballsack32");
@@ -31,10 +41,11 @@ public class TileManager : MonoBehaviour
 
     void SetSpriteForBuilding(BuildingType buildingType) // set the sprite of the buildingDisplayer with spriterenderer to some sprite at specific location
     {
-
-        //TODO If not displaying maybe the path is wrong don't forgor
-        spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buildings/" + BuildingType);
+        spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Buildings/{BuildingType}");
     }
+
+   
+    
 }
 
 public enum TerrainType

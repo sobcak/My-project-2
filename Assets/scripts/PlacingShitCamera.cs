@@ -38,6 +38,7 @@ public class PlacingShitCamera : MonoBehaviour
             GameObject Temp = ClosestOb(mouseWorldPos);
             Temp.GetComponent<TileManager>().BuildingType = BuildingType.Building1;
             Temp.GetComponent<TileManager>().HasBuilding = true;
+            Temp.GetComponent<TileManager>().UpdateBuilding();
         }
     }
     public GameObject ClosestOb(Vector2 SearchPoint)

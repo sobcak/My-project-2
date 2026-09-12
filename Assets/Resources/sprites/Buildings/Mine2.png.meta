@@ -1,14 +1,19 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: f96e595c12cb1668a9d847a24063e36a
-=======
-guid: ae5a8bfba28122943a2e4959efbee88e
->>>>>>> 532872c6f345b2098a956f6f149a44abf425de0c
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
+guid: d19fd8ec0edd18743b58eec79a363c73
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5391499930902814504
-    second: House1_0
+      213: 172622306924273287
+    second: Mine2_0
+========
+guid: 07a0e45705ccc782ab3271957f2da84a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4619080980983763939
+    second: Play2_0
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +111,17 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: House1_0
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
+      name: Mine2_0
+========
+      name: Play2_0
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
       rect:
         serializedVersion: 2
-        x: 3
-        y: 2
-        width: 26
-        height: 25
+        x: 0
+        y: 0
+        width: 32
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,8 +130,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8d0aef3d06b8d25b0800000000000000
-      internalID: -5391499930902814504
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
+      spriteID: 78e9784d217456200800000000000000
+      internalID: 172622306924273287
+========
+      spriteID: 3e3dc44eda54a1040800000000000000
+      internalID: 4619080980983763939
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
       vertices: []
       indices: 
       edges: []
@@ -141,7 +155,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      House1_0: -5391499930902814504
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
+      Mine2_0: 172622306924273287
+========
+      Play2_0: 4619080980983763939
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

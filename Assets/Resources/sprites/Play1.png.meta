@@ -1,10 +1,19 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/House1.png.meta
+guid: 3e67b6a9f9a8a3241a162ce25a226099
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5391499930902814504
+    second: House1_0
+========
 guid: 0832183327c9d42818b33236b626d4fe
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 1678437671503495459
     second: Play1_0
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play1.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,7 +111,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/House1.png.meta
+      name: House1_0
+========
       name: Play1_0
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play1.png.meta
       rect:
         serializedVersion: 2
         x: 0
@@ -117,8 +130,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/House1.png.meta
+      spriteID: 8d0aef3d06b8d25b0800000000000000
+      internalID: -5391499930902814504
+========
       spriteID: 32189936b220b4710800000000000000
       internalID: 1678437671503495459
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play1.png.meta
       vertices: []
       indices: 
       edges: []
@@ -137,7 +155,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/House1.png.meta
+      House1_0: -5391499930902814504
+========
       Play1_0: 1678437671503495459
+>>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play1.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
