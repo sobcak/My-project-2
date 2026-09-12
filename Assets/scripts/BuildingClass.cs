@@ -20,6 +20,8 @@ public record Building
     
     // Priority 
     public int Priority { get; set; } = 0;
+    
+    public int BonusSpace { get; set; } = 0;
 
 }
 
@@ -48,6 +50,16 @@ public class BuildingFactory
         CurrentWorkforce = 0,
         Priority = 2,
     };
+    
+    public static Building Storage = new Building()
+    {
+        BuildingType = BuildingType.Storage,
+        SubType = SubType.Storage,
+        MaterialCost = (Wood: 10, Stone: 10, Bricks: 0),
+        BonusSpace = 5
+    };
+    
+    
     
 }
 

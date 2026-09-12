@@ -3,7 +3,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DataStorage", menuName = "Scriptable Objects/DataStorage")]
 public class DataStorage : ScriptableObject
 {
-
+    public int MaxResources { get; set; } = 40;
+    
+    
     /// <summary>
     /// Important
     public int CurrentEra = 1;
@@ -29,8 +31,6 @@ public class DataStorage : ScriptableObject
 
     // Luxury
     public int Furniture = 50;
-    
-    
     
     public static void Initialize(DataStorage asset)
     {
