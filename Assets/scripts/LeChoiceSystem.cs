@@ -27,6 +27,7 @@ public class LeChoiceSystem : MonoBehaviour
     public void ChooseForestry()
     {
         WeBeChoosing = "Forestry";
+        Debug.Log(WeBeChoosing);
     }
     public void ChooseSaw()
     {
@@ -39,5 +40,21 @@ public class LeChoiceSystem : MonoBehaviour
     public void ChooseMine()
     {
         WeBeChoosing = "Mine";
+    }
+    public void ChooseWell()
+    {
+        WeBeChoosing = "Well";
+    }
+    public void ChooseSmelter()
+    {
+        WeBeChoosing = "Smelter";
+    }
+    public void ChooseChapel()
+    {
+        WeBeChoosing = "Chapel";
+    }
+    public void ChooseSchool()
+    {
+        WeBeChoosing = "School";
     }
 }

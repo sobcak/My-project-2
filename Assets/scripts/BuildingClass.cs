@@ -20,12 +20,14 @@ public record Building
     
     // Priority 
     public int Priority { get; set; } = 0;
+    
+    public int BonusSpace { get; set; } = 0;
 
 }
 
-public class BuildingFactory
+public static class BuildingFactory
 {
-    public static Building Farm = new Building
+    public static Building CreateFarm() => new Building
     {
         BuildingType = BuildingType.Farm,
         SubType = SubType.Production,
@@ -37,7 +39,19 @@ public class BuildingFactory
         Priority = 1,
     };
 
-    public static Building Mine = new Building()
+    public static Building CreateForestry() => new Building
+    {
+        BuildingType = BuildingType.Forestry,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 10, Stone: 5, Bricks: 0),
+        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 2, Stone: 0, Bricks: 0, Food: 0),
+        DesiredWorkforce = 5,
+        CurrentWorkforce = 0,
+        Priority = 2,
+    };
+
+    public static Building CreateMine() => new Building
     {
         BuildingType = BuildingType.Mine,
         SubType = SubType.Production,
@@ -48,7 +62,6 @@ public class BuildingFactory
         CurrentWorkforce = 0,
         Priority = 2,
     };
-    
 }
 
 

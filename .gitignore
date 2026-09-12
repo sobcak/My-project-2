@@ -84,7 +84,11 @@ mono_crash.*
 *.unitypackage
 *.unitypackage.meta
 *.app
-./Assets/Resources/map.txt
+
+
+
+
+Assets/Resources/map.txt
 
 # Crashlytics generated file
 crashlytics-build.properties

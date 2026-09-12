@@ -90,15 +90,39 @@ public class PlacingShitCamera : MonoBehaviour
                     }
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
-                case ("Forestry"):
+                case ("Well"):
                     tile = Temp.GetComponent<TileManager>();
                     if (tile.TerrainType == TerrainType.Water)
                     {
                         break;
                     }
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Well)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Well;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                    else
+                    {
+                        Debug.Log("Not Enough Rescourscess");
+                    }
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+                case ("Forestry"):
+                    Debug.Log("we for");
+                    tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Forestry)))
+                    {
+                        Debug.Log("fi");
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                       
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Saw"):
@@ -107,9 +131,13 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Saw)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                       
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Workshop"):
@@ -118,9 +146,13 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Workshop)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                    
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Mine"):

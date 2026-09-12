@@ -8,7 +8,7 @@ public class ButtonLogic : MonoBehaviour
     public string PathToScene;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void Start() 
     {
         PlayButton.onClick.AddListener(TaskOnClick);
         QuitButton.onClick.AddListener(FuckingQuitOnClick);

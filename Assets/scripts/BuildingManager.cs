@@ -18,18 +18,30 @@ public class BuildingManager : MonoBehaviour
         RegisterBuilding(CreateBuilding(BuildingType.Farm));
     }
 
+    int CalculateWorkMultiplier(int Multiplier)
+    {
+        double final = Multiplier * 0.6;
+        if (final < 1)
+        {
+            final = 1;
+        }
+        return (int)final;
+    }
+
     public void GetToWork()
     {
         Building focusedBuilding = null;
+        
+        int BonusScaling = CalculateWorkMultiplier(DataStorage.Instance.CurrentEra);
 
         foreach (Building b in buildings)
         {
-            // Check required material
+            // required material
             int requiredWood = b.MaterialToRun.Wood;
             int requiredStone = b.MaterialToRun.Stone;
             int requiredBrick = b.MaterialToRun.Bricks;
 
-            // Use >= to allow running when resources exactly match requirements
+            // Running
             if (DataStorage.Instance.Wood >= requiredWood && 
                 DataStorage.Instance.Stone >= requiredStone && 
                 DataStorage.Instance.brick >= requiredBrick)
@@ -39,11 +51,13 @@ public class BuildingManager : MonoBehaviour
                 DataStorage.Instance.Stone -= requiredStone;
                 DataStorage.Instance.brick -= requiredBrick;
 
-                int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce;
-                int stoneToAdd = b.MaterialProduction.Stone * b.CurrentWorkforce;
-                int bricksToAdd = b.MaterialProduction.Bricks * b.CurrentWorkforce;
-                int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce;
+                // Calculate final resources
+                int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce * BonusScaling;
+                int stoneToAdd = b.MaterialProduction.Stone * b.CurrentWorkforce * BonusScaling;
+                int bricksToAdd = b.MaterialProduction.Bricks * b.CurrentWorkforce * BonusScaling;
+                int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce * BonusScaling;
                 
+                // Add resources
                 DataStorage.Instance.Wood += woodToAdd;
                 DataStorage.Instance.Stone += stoneToAdd;
                 DataStorage.Instance.brick += bricksToAdd;
@@ -65,23 +79,19 @@ public class BuildingManager : MonoBehaviour
             DataStorage.Instance.Wood -= b.MaterialCost.Wood;
             DataStorage.Instance.Stone -= b.MaterialCost.Stone;
             DataStorage.Instance.brick -= b.MaterialCost.Bricks;
+            
+            // Add bonus space for storage
+            if (b.BuildingType == BuildingType.Storage)
+            {
+                DataStorage.Instance.MaxResources  = DataStorage.Instance.MaxResources + b.BonusSpace;
+            }
+            
+            
+            
             return true;
         }
         return false;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     public static Building CreateBuilding(BuildingType type)
     {
@@ -89,10 +99,14 @@ public class BuildingManager : MonoBehaviour
         {
             case BuildingType.Farm:
                 Debug.Log("Farm");
-                return BuildingFactory.Farm with { };
+                return BuildingFactory.CreateFarm() with { };
             case BuildingType.Mine:
                 Debug.Log("Mine");
-                return BuildingFactory.Mine with { };
+                return BuildingFactory.CreateMine() with { };
+            case BuildingType.Forestry:
+                Debug.Log("Forestry");
+                return BuildingFactory.CreateForestry() with { };
+           
             default:
                 return null;
         }
