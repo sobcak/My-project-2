@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 454c8193786d68d4db9e9b9b505ddd0b
+guid: 3940f9c30eca8ea469347c1d13f02afc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7103263566819825129
-    second: Woodin1_0
+      213: 2955286255927101427
+    second: Well_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Woodin1_0
+      name: Well_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 28
-        height: 24
+        x: 8
+        y: 6
+        width: 16
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e5154e449cd39260800000000000000
-      internalID: 7103263566819825129
+      spriteID: 3f701262139430920800000000000000
+      internalID: 2955286255927101427
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Woodin1_0: 7103263566819825129
+      Well_0: 2955286255927101427
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

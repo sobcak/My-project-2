@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class BuildingManager : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class BuildingManager : MonoBehaviour
     void Start()
     {
         transform.position = new Vector2(5000, 5000);
-        Debuging();
+        //Debuging();
     }
+    
+    
 
     void Debuging()
     {
@@ -30,40 +33,41 @@ public class BuildingManager : MonoBehaviour
 
     public void GetToWork()
     {
-        Building focusedBuilding = null;
+        int bonusScaling = CalculateWorkMultiplier(DataStorage.Instance.CurrentEra);
+        Debug.Log($"Got To Work");
         
-        int BonusScaling = CalculateWorkMultiplier(DataStorage.Instance.CurrentEra);
-
         foreach (Building b in buildings)
         {
-            // required material
+            Debug.Log("Testy");
+            if (b.CurrentWorkforce <= 0) continue; // Skip buildings without workers
+
             int requiredWood = b.MaterialToRun.Wood;
             int requiredStone = b.MaterialToRun.Stone;
             int requiredBrick = b.MaterialToRun.Bricks;
 
-            // Running
+            // Check if there are enough resources to run production
             if (DataStorage.Instance.Wood >= requiredWood && 
                 DataStorage.Instance.Stone >= requiredStone && 
                 DataStorage.Instance.brick >= requiredBrick)
             {
-                // Subtract required resources
+                // Deduct inputs
                 DataStorage.Instance.Wood -= requiredWood;
                 DataStorage.Instance.Stone -= requiredStone;
                 DataStorage.Instance.brick -= requiredBrick;
 
-                // Calculate final resources
-                int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce * BonusScaling;
-                int stoneToAdd = b.MaterialProduction.Stone * b.CurrentWorkforce * BonusScaling;
-                int bricksToAdd = b.MaterialProduction.Bricks * b.CurrentWorkforce * BonusScaling;
-                int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce * BonusScaling;
+                // Add production output scaled by workforce and era
                 
-                // Add resources
+                Debug.Log(DataStorage.Instance.Wood);
+
+                int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.Wood += woodToAdd;
-                DataStorage.Instance.Stone += stoneToAdd;
-                DataStorage.Instance.brick += bricksToAdd;
-                DataStorage.Instance.AvailableFood += foodToAdd;
+                Debug.Log("Wood to Add " +  woodToAdd);
+                DataStorage.Instance.Stone += b.MaterialProduction.Stone * b.CurrentWorkforce * bonusScaling;
+                DataStorage.Instance.brick += b.MaterialProduction.Bricks * b.CurrentWorkforce * bonusScaling;
+                DataStorage.Instance.AvailableFood += b.MaterialProduction.Food * b.CurrentWorkforce * bonusScaling;
                 
-                Debug.Log($"New amount of Wood {DataStorage.Instance.Wood} New amount of Stone {DataStorage.Instance.Stone} New Amount of Food {DataStorage.Instance.AvailableFood}");
+                Debug.Log(DataStorage.Instance.Wood + " wood after");
+
             }
         }
     }
@@ -83,6 +87,7 @@ public class BuildingManager : MonoBehaviour
             // Add bonus space for storage
             if (b.BuildingType == BuildingType.Storage)
             {
+                DataStorage.Instance.Housing = DataStorage.Instance.Housing + b.BonusHousing;
                 DataStorage.Instance.MaxResources  = DataStorage.Instance.MaxResources + b.BonusSpace;
             }
             
@@ -98,14 +103,15 @@ public class BuildingManager : MonoBehaviour
         switch (type)
         {
             case BuildingType.Farm:
-                Debug.Log("Farm");
-                return BuildingFactory.Farm with { };
+                return BuildingFactory.CreateFarm();
             case BuildingType.Mine:
-                Debug.Log("Mine");
-                return BuildingFactory.Mine with { };
+                return BuildingFactory.CreateMine();
             case BuildingType.Forestry:
-                Debug.Log("Forestry");
-                return BuildingFactory.Forestry with { };
+                return BuildingFactory.CreateForestry();
+            case BuildingType.Housing:
+                return BuildingFactory.CreateHousing();
+            case BuildingType.Storage:
+                return BuildingFactory.CreateStorage();
             default:
                 return null;
         }
@@ -113,39 +119,31 @@ public class BuildingManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("OnTriggerEnter2DBuild");
-        Debug.Log(DataStorage.Instance.NumberOfHumans + " Building number of humans");
-        
+        Debug.Log("Entered OnTrigger Building" );
+        Debug.Log("Current Workers" + DataStorage.Instance.Workers);
         SortByPriority();
+
+        foreach (Building b in buildings)
+        {
+            b.CurrentWorkforce = 0;
+        }
+
         int currentFocus = 0;
-        Building focusedBuilding = null;
 
         for (int i = 0; i < DataStorage.Instance.Workers; i++)
         {
-            if (currentFocus < buildings.Count)
-            {
-                focusedBuilding = buildings[currentFocus];
-            }
-            else
-            {
-                Debug.Log("BREAK");
-                break;
-            }
-    
-            Debug.Log("AFTER BREAK");
+            if (currentFocus >= buildings.Count) break;
+
+            Building focusedBuilding = buildings[currentFocus];
             focusedBuilding.CurrentWorkforce++;
-            
+
             if (focusedBuilding.CurrentWorkforce >= focusedBuilding.DesiredWorkforce)
             {
-                Debug.Log("Desired work full");
                 currentFocus++;
             }
-            
-            GetToWork(); // Get Produced goods
         }
-        
-        // reset
-        currentFocus = 0;
+
+        GetToWork();
     }
 
     void SortByPriority()

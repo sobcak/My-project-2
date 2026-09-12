@@ -22,7 +22,8 @@ public class DataStorage : ScriptableObject
 
     public int NumberOfHumans = 0;
     public int AvailableFood = 30;
-    public int AvailableHousing = 0;
+    public int AvailableHousing => Housing - NumberOfHumans;
+    public int Housing = 0;
     public int Workers;
 
     public int Stone = 50;
