@@ -108,6 +108,10 @@ public class BuildingManager : MonoBehaviour
                 return BuildingFactory.CreateMine();
             case BuildingType.Forestry:
                 return BuildingFactory.CreateForestry();
+            case BuildingType.Housing:
+                return BuildingFactory.CreateHousing();
+            case BuildingType.Storage:
+                return BuildingFactory.CreateStorage();
             default:
                 return null;
         }
