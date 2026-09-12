@@ -7,15 +7,16 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D body;
     //public  Transform kamera;
     public Camera kamera;
+    public float akcelerace;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Movement()
     {
         float xInput = Input.GetAxis("Horizontal");
         float yInput = Input.GetAxis("Vertical");
+        
         Vector2 direction = new Vector2(xInput, yInput).normalized;
-        body.linearVelocity = direction * speed;
-
+        body.linearVelocity = direction * (speed + akcelerace);
     }
     void CameraControlls()
     {
