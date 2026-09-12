@@ -10,17 +10,29 @@ public class jankyshitforui : MonoBehaviour
     public void ShowHousingPanel()
     {
         HousingPanel.SetActive(true);
+        EvolutionPanel.SetActive(false);
+        ExtractionPanel.SetActive(false);
+        ProductionPanel.SetActive(false);
     }
     public void ShowEvolutionPanel()
     {
+        HousingPanel.SetActive(false);
         EvolutionPanel.SetActive(true);
+        ExtractionPanel.SetActive(false);
+        ProductionPanel.SetActive(false);
     }
     public void ShowExtractionPanel()
     {
+        HousingPanel.SetActive(false);
+        EvolutionPanel.SetActive(false);
         ExtractionPanel.SetActive(true);
+        ProductionPanel.SetActive(false);
     }
     public void ShowProductionPanel()
     {
+        HousingPanel.SetActive(false);
+        EvolutionPanel.SetActive(false);
+        ExtractionPanel.SetActive(false);
         ProductionPanel.SetActive(true);
     }
 }
