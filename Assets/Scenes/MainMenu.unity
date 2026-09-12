@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Play
   PlayButton: {fileID: 893408301}
   QuitButton: {fileID: 1548268143}
-  PathToScene: OliverTest
+  PathToScene: test_scena
 --- !u!1 &494357017
 GameObject:
   m_ObjectHideFlags: 0
