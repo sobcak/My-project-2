@@ -16,13 +16,16 @@ public class bettermenu : MonoBehaviour
     // show/hide
     public void YouShallMaybeSee()
     {
-        if(sklo.activeInHierarchy)
+        if(sklo == null) return;
         {
-            sklo.SetActive(false);
+            sklo.SetActive(!sklo.activeSelf);
         }
-        else
-        {
-            sklo.SetActive(true);
-        }
+        
+    }
+    public void Leavuju()
+    {
+        Debug.Log("Quituju tentokrát fr");
+        Application.Quit();
+        
     }
 }
