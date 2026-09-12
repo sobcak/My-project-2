@@ -11,7 +11,7 @@ public class HumanManagerScript : MonoBehaviour
         transform.position = new Vector2(5015, 5015);
 
         // Populate
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 10; i++)
         {
             CreateHuman();
         }
