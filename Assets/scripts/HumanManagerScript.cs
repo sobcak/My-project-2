@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class HumanManagerScript : MonoBehaviour
@@ -15,6 +16,7 @@ public class HumanManagerScript : MonoBehaviour
             CreateHuman();
         }
     }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,6 +39,7 @@ public class HumanManagerScript : MonoBehaviour
     void KillOldHuman()
     {
         humanRegistry.RemoveAll(human => human.CurrentAge >= human.MaxAge);
+        DataStorage.Instance.Workers = humanRegistry.Count(h => h.Adult);
         DataStorage.Instance.NumberOfHumans = humanRegistry.Count;
     }
 
@@ -58,7 +61,7 @@ public class HumanManagerScript : MonoBehaviour
         if (DataStorage.Instance.AvailableFood > foodRequirement && 
             DataStorage.Instance.AvailableHousing > housingRequirement)
         {
-            int pairs = DataStorage.Instance.NumberOfHumans / 2;
+            int pairs = DataStorage.Instance.Workers / 2;  // workers are adults kind of 
             for (int i = 0; i < pairs; i++)
             {
                 int kid = Random.Range(0, 9);
