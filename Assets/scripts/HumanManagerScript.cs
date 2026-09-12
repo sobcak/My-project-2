@@ -10,9 +10,40 @@ public class HumanManagerScript : MonoBehaviour
 
     public DataStorage dataAsset;
     
+
+    void Start()
+    {
+        if (dataAsset == null)
+        {
+            dataAsset = new DataStorage();
+        }
+        
+        transform.position =  new Vector2(5015,5015);
+        // Test create 10 people;
+        CreateHuman();
+        CreateHuman();
+        CreateHuman();
+        CreateHuman();
+        CreateHuman();
+        CreateHuman();
+        CreateHuman();
+        CreateHuman();
+        CreateHuman();
+        CreateHuman();
+    }
+    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Triggered overlap with: " + other.name);
+        
+        KillOldHuman();
+        Age();
+        HaveKids();
+    }
     
     void CreateHuman()
     {
+        Debug.Log("Person was born");
         Human human = new Human();
         humanRegistry.Add(human);
         dataAsset.NumberOfHumans = humanRegistry.Count;
@@ -20,11 +51,13 @@ public class HumanManagerScript : MonoBehaviour
     
     void KillOldHuman()
     {
+        Debug.Log("Kill Reached");
         foreach (Human human in humanRegistry)
         {
             if (human.CurrentAge == human.MaxAge)
             {
                 humanRegistry.Remove(human);
+                Debug.Log("Person died");
             }
         }
         dataAsset.NumberOfHumans = humanRegistry.Count;
@@ -40,6 +73,7 @@ public class HumanManagerScript : MonoBehaviour
 
     void HaveKids()
     {
+        Debug.Log("Kids Reached");
         if (dataAsset.AvailableFood > dataAsset.NumberOfHumans + dataAsset.NumberOfHumans * 0.2) // If we have food to spare
         {
             if (dataAsset.AvailableHousing > dataAsset.NumberOfHumans + dataAsset.NumberOfHumans * 0.1)
