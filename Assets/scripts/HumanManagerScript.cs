@@ -21,7 +21,6 @@ public class HumanManagerScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Triggered overlap with: " + other.name);
-        Debug.Log(DataStorage.Instance.NumberOfHumans + " Human number of humans");
 
         KillOldHuman();
         Age();
@@ -48,13 +47,16 @@ public class HumanManagerScript : MonoBehaviour
         foreach (Human human in humanRegistry)
         {
             human.CurrentAge++;
+            DataStorage.Instance.AvailableFood--;
+            if (DataStorage.Instance.AvailableFood <= 0)
+            {
+                DataStorage.Instance.AvailableFood = 0;
+            }
         }
     }
 
     void HaveKids()
     {
-        Debug.Log("Kids Reached");
-        
         float foodRequirement = DataStorage.Instance.NumberOfHumans * 1.2f;
         float housingRequirement = DataStorage.Instance.NumberOfHumans * 1.1f;
 
