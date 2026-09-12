@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class LeChoiceSystem
+public class LeChoiceSystem : MonoBehaviour
 {
     public static string WeBeChoosing = "Nothing";
     public enum YourBuildChoise
@@ -22,7 +22,7 @@ public class LeChoiceSystem
     }
     public void ChooseFamring()
     {
-        WeBeChoosing = "Farming";
+        WeBeChoosing = "Farm";
     }
     public void ChooseForestry()
     {
@@ -35,5 +35,9 @@ public class LeChoiceSystem
     public void ChooseWorkshop()
     {
         WeBeChoosing = "Workshop";
+    }
+    public void ChooseMine()
+    {
+        WeBeChoosing = "Mine";
     }
 }
