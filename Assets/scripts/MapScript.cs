@@ -7,6 +7,7 @@ public class MapScript : MonoBehaviour
     [SerializeField] private GameObject Tile;
     Vector2 scale;
     Vector2 Temp;
+    char tmp;
 
 
 
@@ -19,14 +20,34 @@ public class MapScript : MonoBehaviour
 
     void StartGeneration()
     {
-        for (int x = MapWidth; x >= 0; x--)
+        fileReaderTemporary.LoadMapsIntoMemory();
+        for (int x = MapWidth-1; x >= 0; x--)
         {
-            for (int y = MapHeight; y >= 0; y--) {
+            for (int y = MapHeight-1; y >= 0; y--) {
 
                 float OffsetX = (x - y) * (scale.x / 2f);
                 float OffsetY = (x + y) * (scale.y / 4f);
                 GameObject PlacedTile = Instantiate(Tile, new Vector2(OffsetX, OffsetY), Quaternion.identity);
-                PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Water;
+
+                switch (tmp = fileReaderTemporary.Coordinance(new Vector2(x, y))){
+                    case 'P':
+                        PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Grass;
+                        PlacedTile.GetComponent<TileManager>().SetTerrainSprite();
+                        break;
+                    case 'S':
+                        PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Desert;
+                        PlacedTile.GetComponent<TileManager>().SetTerrainSprite();
+                        break;
+                    case 'W':
+                        PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Water;
+                        PlacedTile.GetComponent<TileManager>().SetTerrainSprite();
+                        break;
+                }
+                
+
+                
+                
+                
                 Temp = PlacedTile.GetComponent<SpriteRenderer>().bounds.size;
                 
             }

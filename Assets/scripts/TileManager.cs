@@ -19,7 +19,7 @@ public class TileManager : MonoBehaviour
         // Attach the BuildingDisplayer to self with custom x coordinates :)
         Vector3 position = new Vector3(transform.position.x, transform.position.y + BuildingOffset, transform.position.z);
         spawnedObjectPrefab =  Instantiate(objectPrefab, position, Quaternion.identity);
-        SetTerrainSprite();
+        
     }
 
 
@@ -33,7 +33,7 @@ public class TileManager : MonoBehaviour
     }
 
 
-    void SetTerrainSprite()
+    public void SetTerrainSprite()
     {
         //Debug.Log("ballsack32");
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Terrain/{TerrainType}");

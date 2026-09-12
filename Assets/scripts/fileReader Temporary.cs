@@ -4,23 +4,32 @@ using System.Linq;
 
 public class fileReaderTemporary
 {
-    public int MappingWidth = 50;
-    public int MappingHeight = 50;
-    public void LoadMapsIntoMemory()
+    public static int MappingWidth = 50;
+    public static int MappingHeight = 50;
+    static char CurrentData = 'P';
+    static char[,] Cords;
+    public static void LoadMapsIntoMemory()
     {
-        for (int x = MappingWidth; x >= 0; x--)
+        TextAsset mapFile = Resources.Load<TextAsset>("map");
+        string[] lines = mapFile.text.Trim().Split(new[] { "\r\n", "\r", "\n" }, System.StringSplitOptions.None);
+        Cords = new char[MappingWidth, MappingHeight];
+
+        for (int y = 0; y < MappingHeight; y++)
         {
-            for (int y = MappingHeight; y >= 0; y--)
+            string line = lines[y];
+            for (int x = 0; x < MappingWidth; x++)
             {
-                string line = File.ReadLines("Jsynu/map").Skip(y).Take(1).First();
+                char currentData = line[x];
+                Cords[x, y] = currentData;
             }
         }
     }
-    public string Coordinance(Vector2 MapCords)
+    public static char Coordinance(Vector2 MapCords)
     {
-        
+        int y = (int)MapCords.y;
+        int x = (int)MapCords.x;
 
 
-        return "";
+        return Cords[y, x];
     }
 }
