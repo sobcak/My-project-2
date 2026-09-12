@@ -9,12 +9,12 @@ public class DataStorage : ScriptableObject
     public static DataStorage Instance { get; private set; }
 
     public int NumberOfHumans;
-    public int AvailableFood = 0;
-    public int AvailableHousing = 100;
+    public int AvailableFood;
+    public int AvailableHousing;
     public int Workers;
 
-    public int Stone = 100;
-    public int Wood = 100;
+    public int Stone;
+    public int Wood;
     public int brick;
 
     
