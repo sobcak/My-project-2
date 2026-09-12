@@ -16,8 +16,16 @@ public class BuildingManager:MonoBehaviour
 
     void Debuging()
     {
-        Debug.Log("Debuging Building manger");
+        Debug.Log("Debugging Building manger");
         RegisterBuilding(CreateBuilding(BuildingType.Farm));
+    }
+
+    public void GetToWork()
+    {
+        Building focusedBuilding = null;
+        
+        foreach (Building b in buildings){}
+        
     }
 
     public static Building CreateBuilding(BuildingType type)
