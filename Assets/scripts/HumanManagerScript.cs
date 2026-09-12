@@ -10,11 +10,21 @@ public class HumanManagerScript : MonoBehaviour
     {
         transform.position = new Vector2(5015, 5015);
 
-        // Populate
+        // Populate 
         for (int i = 0; i < 10; i++)
         {
-            CreateHuman();
+            CreateStartingAdult(); 
         }
+    
+        UpdateWorkerCount();
+    }
+    
+    void UpdateWorkerCount()
+    {
+        // Assuming your Human class has an 'Adult' boolean
+        DataStorage.Instance.Workers = humanRegistry.Count(h => h.Adult); 
+        DataStorage.Instance.NumberOfHumans = humanRegistry.Count;
+        Debug.Log($"Worker Count Updated! Total Humans: {DataStorage.Instance.NumberOfHumans}, Total Workers: {DataStorage.Instance.Workers}");
     }
     
 
@@ -26,6 +36,16 @@ public class HumanManagerScript : MonoBehaviour
         Age();
         HaveKids();
     }
+    
+    void CreateStartingAdult()
+    {
+        Human human = new Human();
+        human.Initialize();
+        
+        human.CurrentAge = 20; 
+    
+        humanRegistry.Add(human);
+    }
 
     void CreateHuman()
     {
@@ -33,6 +53,7 @@ public class HumanManagerScript : MonoBehaviour
         human.Initialize();
         humanRegistry.Add(human);
         DataStorage.Instance.NumberOfHumans = humanRegistry.Count;
+        UpdateWorkerCount();
     }
 
     void KillOldHuman()
@@ -55,6 +76,18 @@ public class HumanManagerScript : MonoBehaviour
         }
     }
 
+
+    public void GetAJob()
+    {
+        
+    }
+    
+    
+    
+    
+    
+    
+
     void HaveKids()
     {
         float foodRequirement = DataStorage.Instance.NumberOfHumans * 1.2f;
@@ -66,8 +99,8 @@ public class HumanManagerScript : MonoBehaviour
             int pairs = DataStorage.Instance.Workers / 2;  // workers are adults kind of 
             for (int i = 0; i < pairs; i++)
             {
-                int kid = Random.Range(0, 9);
-                if (kid == 8)
+                int kid = Random.Range(0, 7);
+                if (kid == 6)
                 {
                     CreateHuman();
                 }
