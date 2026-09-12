@@ -7,10 +7,10 @@ public class PerlinNoise : MonoBehaviour
 {
     public Button button;
     int width  = 50;
-    int height = 50;
-    float scale = 1f;
+    int height = 100;
+    float scale = 0.1f;
 
-    const string ramp = "WSP";
+    const string ramp = "PWS";
 
     void Start()
     {
@@ -27,8 +27,7 @@ public class PerlinNoise : MonoBehaviour
             for (int x = 0; x < width; x++)
             {
                 float val = Mathf.PerlinNoise(x * scale, y * scale);
-                int idx = Mathf.Clamp(
-                    (int)(val * (ramp.Length - 1)), 0, ramp.Length - 1);
+                int idx = Mathf.Clamp((int)(val * ramp.Length), 0, ramp.Length - 1);
                 sb.Append(ramp[idx]);
             }
             sb.AppendLine();
