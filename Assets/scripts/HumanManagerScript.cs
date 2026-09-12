@@ -65,28 +65,24 @@ public class HumanManagerScript : MonoBehaviour
 
     void Age()
     {
-        foreach (Human human in humanRegistry)
+        for (int i = humanRegistry.Count - 1; i >= 0; i--)
         {
-            human.CurrentAge++;
+            Human currentHuman = humanRegistry[i];
+            currentHuman.CurrentAge++;
             DataStorage.Instance.AvailableFood--;
             if (DataStorage.Instance.AvailableFood <= 0)
             {
-                DataStorage.Instance.AvailableFood = 0;
+                DataStorage.Instance.AvailableFood = 0; 
+                Debug.Log("Human starved to death");
+                humanRegistry.RemoveAt(i);
+                
+                DataStorage.Instance.NumberOfHumans = humanRegistry.Count;
+                UpdateWorkerCount();
             }
         }
     }
 
-
-    public void GetAJob()
-    {
-        
-    }
-    
-    
-    
-    
-    
-    
+ 
 
     void HaveKids()
     {
