@@ -25,9 +25,9 @@ public record Building
 
 }
 
-public class BuildingFactory
+public static class BuildingFactory
 {
-    public static Building Farm = new Building
+    public static Building CreateFarm() => new Building
     {
         BuildingType = BuildingType.Farm,
         SubType = SubType.Production,
@@ -39,26 +39,7 @@ public class BuildingFactory
         Priority = 1,
     };
 
-    public static Building Mine = new Building()
-    {
-        BuildingType = BuildingType.Mine,
-        SubType = SubType.Production,
-        MaterialCost = (Wood: 10, Stone: 10, Bricks: 0),
-        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
-        MaterialProduction = (Wood: 0, Stone: 2, Bricks: 0, Food: 0),
-        DesiredWorkforce = 5,
-        CurrentWorkforce = 0,
-        Priority = 2,
-    };
-    
-    public static Building Storage = new Building()
-    {
-        BuildingType = BuildingType.Storage,
-        SubType = SubType.Storage,
-        MaterialCost = (Wood: 10, Stone: 10, Bricks: 0),
-        BonusSpace = 5
-    };
-    public static Building Forestry = new Building
+    public static Building CreateForestry() => new Building
     {
         BuildingType = BuildingType.Forestry,
         SubType = SubType.Production,
@@ -70,8 +51,17 @@ public class BuildingFactory
         Priority = 2,
     };
 
-
-
+    public static Building CreateMine() => new Building
+    {
+        BuildingType = BuildingType.Mine,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 10, Stone: 10, Bricks: 0),
+        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 2, Bricks: 0, Food: 0),
+        DesiredWorkforce = 5,
+        CurrentWorkforce = 0,
+        Priority = 2,
+    };
 }
 
 
