@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 public class HumanManagerScript : MonoBehaviour
 {
     public List<Human> humanRegistry = new List<Human>();
+    List<int> KillHelper =  new List<int>();
 
     public DataStorage dataAsset;
     
@@ -47,10 +48,20 @@ public class HumanManagerScript : MonoBehaviour
         {
             if (human.CurrentAge == human.MaxAge)
             {
-                humanRegistry.Remove(human);
+                
+                KillHelper.Add(humanRegistry.IndexOf(human));  // que their index 
                 //Debug.Log("Person died");
             }
         }
+
+        if (KillHelper.Count > 0)
+        {
+            foreach (int i in KillHelper)
+            {
+                humanRegistry.RemoveAt(i);
+            }
+        }
+
         dataAsset.NumberOfHumans = humanRegistry.Count;
     }
 

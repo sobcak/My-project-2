@@ -28,7 +28,7 @@ public class TileManager : MonoBehaviour
         if (HasBuilding)
         {
             SetSpriteForBuilding(BuildingType);
-            Debug.Log("reached update");
+            //Debug.Log("reached update");
         }
     }
 
