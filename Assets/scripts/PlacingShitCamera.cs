@@ -47,28 +47,39 @@ public class PlacingShitCamera : MonoBehaviour
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Housing;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
-                case ("Farming"):
+                case ("Farm"):
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Forestry"):
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Saw"):
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Workshop"):
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
-                
+                case ("Mine"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+
             }
 
         }

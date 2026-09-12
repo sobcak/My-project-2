@@ -250,7 +250,7 @@ Transform:
   m_GameObject: {fileID: 292897958}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.92183906, y: 0.77199876, z: -10}
+  m_LocalPosition: {x: -0.92183906, y: 0.77199876, z: -113.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -734,6 +734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HumanManagerScript
   humanRegistry: []
+  dataAsset: {fileID: 0}
 --- !u!4 &635410319
 Transform:
   m_ObjectHideFlags: 0
@@ -1135,7 +1136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -398.23, y: 482.66}
+  m_AnchoredPosition: {x: -398.22998, y: 482.66}
   m_SizeDelta: {x: -878.77, y: -965.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1142691323
@@ -1416,7 +1417,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1433388734}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6633570865831410485}
+        m_TargetAssemblyTypeName: LeChoiceSystem, Assembly-CSharp
+        m_MethodName: ChooseFamring
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1433388734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1616,7 +1629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1545173224}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6633570865831410485}
+        m_TargetAssemblyTypeName: LeChoiceSystem, Assembly-CSharp
+        m_MethodName: ChooseMine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1545173224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1891,7 +1916,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1898660940}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6633570865831410485}
+        m_TargetAssemblyTypeName: LeChoiceSystem, Assembly-CSharp
+        m_MethodName: ChooseForestry
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1898660940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2040,97 +2077,74 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2145934196
-GameObject:
+--- !u!1001 &6633570865831410484
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2145934199}
-  - component: {fileID: 2145934198}
-  - component: {fileID: 2145934197}
-  m_Layer: 0
-  m_Name: BuildingManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &2145934197
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145934196}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &2145934198
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5174440356952326725, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_Name
+      value: chooser
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.70302
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.79598
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9138058612574664785, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+--- !u!114 &6633570865831410485 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 4482323937046102198, guid: 5e6675e781554d84eb4534069416c562, type: 3}
+  m_PrefabInstance: {fileID: 6633570865831410484}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145934196}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3a85b2d0ff8e124aab3bf0f245366ac, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e4009891956d1145860e0dc3f62ccf3, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BuildingManager
---- !u!4 &2145934199
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145934196}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -68.20103, y: 34.02689, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_EditorClassIdentifier: Assembly-CSharp::LeChoiceSystem
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2144,4 +2158,4 @@ SceneRoots:
   - {fileID: 357466830}
   - {fileID: 843830069}
   - {fileID: 539685030}
-  - {fileID: 2145934199}
+  - {fileID: 6633570865831410484}

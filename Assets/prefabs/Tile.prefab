@@ -110,7 +110,7 @@ MonoBehaviour:
   HasBuilding: 0
   TerrainType: 0
   BuildingType: 0
-  BuildingOffset: 0
+  BuildingOffset: 0.15
 --- !u!61 &4537459669994399935
 BoxCollider2D:
   m_ObjectHideFlags: 0
