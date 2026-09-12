@@ -124,36 +124,65 @@ public class BuildingManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Entered OnTrigger Building" );
+        Debug.Log("Entered OnTrigger Building");
         Debug.Log("Current Workers" + DataStorage.Instance.Workers);
-        SortByPriority();
 
         foreach (Building b in buildings)
         {
             b.CurrentWorkforce = 0;
         }
 
-        int currentFocus = 0;
+        if (buildings.Count == 0 || DataStorage.Instance.Workers <= 0) return;
 
-        for (int i = 0; i < DataStorage.Instance.Workers; i++)
+        List<Building> priorityOneBuildings = buildings.FindAll(b => b.Priority == 1);
+        List<Building> lowerPriorityBuildings = buildings.FindAll(b => b.Priority > 1);
+
+        lowerPriorityBuildings.Sort((a, b) => a.Priority.CompareTo(b.Priority));
+
+        int totalWorkers = DataStorage.Instance.Workers;
+        int priorityOnePool = Mathf.RoundToInt(totalWorkers * 0.40f);
+        int lowerPriorityPool = totalWorkers - priorityOnePool;
+
+        int unassignedP1 = DistributeWorkersToGroup(priorityOneBuildings, priorityOnePool);
+
+        lowerPriorityPool += unassignedP1;
+
+        int leftoverWorkers = DistributeWorkersToGroup(lowerPriorityBuildings, lowerPriorityPool);
+
+        if (leftoverWorkers > 0)
         {
-            if (currentFocus >= buildings.Count) break;
-
-            Building focusedBuilding = buildings[currentFocus];
-            focusedBuilding.CurrentWorkforce++;
-
-            if (focusedBuilding.CurrentWorkforce >= focusedBuilding.DesiredWorkforce)
-            {
-                currentFocus++;
-            }
+            DistributeWorkersToGroup(priorityOneBuildings, leftoverWorkers);
         }
 
         GetToWork();
     }
 
+    int DistributeWorkersToGroup(List<Building> buildingGroup, int availableWorkers)
+    {
+        int currentBuildingIndex = 0;
+
+        while (availableWorkers > 0 && currentBuildingIndex < buildingGroup.Count)
+        {
+            Building targetBuilding = buildingGroup[currentBuildingIndex];
+
+            if (targetBuilding.CurrentWorkforce < targetBuilding.DesiredWorkforce)
+            {
+                targetBuilding.CurrentWorkforce++;
+                availableWorkers--;
+            }
+            else
+            {
+                currentBuildingIndex++;
+            }
+        }
+
+        return availableWorkers; // Returns unused workers from this pool
+    }
+
     void SortByPriority()
     {
         buildings.Sort((a, b) => a.Priority.CompareTo(b.Priority));
+        
     }
 
     public static bool RegisterBuilding(Building b)

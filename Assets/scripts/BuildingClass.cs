@@ -35,7 +35,7 @@ public static class BuildingFactory
         SubType = SubType.Production,
         MaterialCost = (Wood: 10, Stone: 5, Bricks: 0),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
-        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 2),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 4),
         DesiredWorkforce = 5,
         CurrentWorkforce = 0,
         Priority = 1,
@@ -49,7 +49,7 @@ public static class BuildingFactory
         SubType = SubType.Production,
         MaterialCost = (Wood: 5, Stone: 5, Bricks: 0),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
-        MaterialProduction = (Wood: 3, Stone: 0, Bricks: 0, Food: 0),
+        MaterialProduction = (Wood: 4, Stone: 0, Bricks: 0, Food: 0),
         DesiredWorkforce = 5,
         CurrentWorkforce = 0,
         Priority = 2,
@@ -63,7 +63,7 @@ public static class BuildingFactory
         SubType = SubType.Production,
         MaterialCost = (Wood: 10, Stone: 0, Bricks: 0),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
-        MaterialProduction = (Wood: 0, Stone: 3, Bricks: 0, Food: 0),
+        MaterialProduction = (Wood: 0, Stone: 4, Bricks: 0, Food: 0),
         DesiredWorkforce = 5,
         CurrentWorkforce = 0,
         Priority = 2,
@@ -96,7 +96,7 @@ public static class BuildingFactory
         CurrentWorkforce = 0,
         Priority = 10,
         BonusHousing = 0,
-        BonusSpace = 3 + (2 * DataStorage.Instance.CurrentEra) // scaling 
+        BonusSpace = 5 + (2 * DataStorage.Instance.CurrentEra) // scaling 
     };
 }
 
