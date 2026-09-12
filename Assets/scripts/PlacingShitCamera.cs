@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using NUnit.Framework.Internal.Commands;
 
 public class PlacingShitCamera : MonoBehaviour
 {
@@ -11,9 +12,9 @@ public class PlacingShitCamera : MonoBehaviour
     [SerializeField] private float SearchRadius = 20f;
     [SerializeField] private GameObject RightClickInfoCanvas;
     [SerializeField] private Text HasBuilding;
-    [SerializeField] private Text TerrainType;
+    [SerializeField] private Text TerrainType2;
     [SerializeField] private Text BuidlingType;
-
+    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -42,7 +43,7 @@ public class PlacingShitCamera : MonoBehaviour
             GameObject Temp = ClosestOb(mouseWorldPos);
             RightClickInfoCanvas.SetActive(true);
             HasBuilding.text = Temp.GetComponent<TileManager>().HasBuilding.ToString();
-            TerrainType.text = Temp.GetComponent<TileManager>().TerrainType.ToString();
+            TerrainType2.text = Temp.GetComponent<TileManager>().TerrainType.ToString();
             BuidlingType.text = Temp.GetComponent<TileManager>().BuildingType.ToString();
         }
         if (Input.GetMouseButtonDown(0))
@@ -59,6 +60,8 @@ public class PlacingShitCamera : MonoBehaviour
             Debug.Log("World Position: " + mouseWorldPos);
             GameObject Temp = ClosestOb(mouseWorldPos);
             Debug.Log(Temp);
+
+            
             switch (LeChoiceSystem.WeBeChoosing)
             {
                 case ("Nothing"):
@@ -70,6 +73,11 @@ public class PlacingShitCamera : MonoBehaviour
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Farm"):
+                    TileManager tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm)))
                     {
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
@@ -83,24 +91,49 @@ public class PlacingShitCamera : MonoBehaviour
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Forestry"):
+                    tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Saw"):
+                    tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Workshop"):
+                    tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Mine"):
+                    tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
+                    tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Mine)))
                     {
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
