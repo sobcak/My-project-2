@@ -8,7 +8,7 @@ public class Human
     public int MaxAge; 
     public int CurrentAge;
     public bool Employed;
-    public bool Adult => CurrentAge >= 10;
+    public bool Adult => CurrentAge >= 8;
     public bool Homeless;
     
     public Human()
