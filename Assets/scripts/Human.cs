@@ -8,7 +8,7 @@ public class Human
     public int MaxAge; 
     public int CurrentAge;
     public bool Employed;
-    public bool Adult => CurrentAge >= 10;
+    public bool Adult => CurrentAge >= 8;
     public bool Homeless;
     
     public Human()
@@ -18,7 +18,7 @@ public class Human
     }
     public void Initialize()
     {
-        int minOffset = -30;
+        int minOffset = -25;
         int maxOffset = 20;
         MaxAge = 40 + UnityEngine.Random.Range(minOffset, maxOffset);
     }

@@ -62,7 +62,8 @@ public class BuildingManager : MonoBehaviour
                 int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.Wood += woodToAdd;
                 Debug.Log("Wood to Add " +  woodToAdd);
-                DataStorage.Instance.Stone += b.MaterialProduction.Stone * b.CurrentWorkforce * bonusScaling;
+                int stoneToAdd = b.MaterialProduction.Stone * b.CurrentWorkforce * bonusScaling;
+                DataStorage.Instance.Stone += stoneToAdd;
                 DataStorage.Instance.brick += b.MaterialProduction.Bricks * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.AvailableFood += b.MaterialProduction.Food * b.CurrentWorkforce * bonusScaling;
                 

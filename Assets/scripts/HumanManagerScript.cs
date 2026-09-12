@@ -11,7 +11,7 @@ public class HumanManagerScript : MonoBehaviour
         transform.position = new Vector2(5015, 5015);
 
         // Populate 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 14; i++)
         {
             CreateStartingAdult(); 
         }
@@ -95,8 +95,8 @@ public class HumanManagerScript : MonoBehaviour
             int pairs = DataStorage.Instance.Workers / 2;  // workers are adults kind of 
             for (int i = 0; i < pairs; i++)
             {
-                int kid = Random.Range(0, 7);
-                if (kid == 6)
+                int kid = Random.Range(0, 4);
+                if (kid == 3)
                 {
                     CreateHuman();
                 }
