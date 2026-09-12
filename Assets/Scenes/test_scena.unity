@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 326579176}
   - component: {fileID: 326579175}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: placing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -490,6 +490,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   SearchRadius: 5
+  RightClickInfoCanvas: {fileID: 1239338237}
+  HasBuilding: {fileID: 454945558}
+  TerrainType: {fileID: 883131382}
+  BuidlingType: {fileID: 37593280}
 --- !u!4 &326579176
 Transform:
   m_ObjectHideFlags: 0

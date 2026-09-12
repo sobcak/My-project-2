@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class PlacingShitCamera : MonoBehaviour
 {
@@ -7,10 +9,12 @@ public class PlacingShitCamera : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private LayerMask Layer;
     [SerializeField] private float SearchRadius = 20f;
+    [SerializeField] private GameObject RightClickInfoCanvas;
+    [SerializeField] private Text HasBuilding;
+    [SerializeField] private Text TerrainType;
+    [SerializeField] private Text BuidlingType;
 
 
-    
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,7 +28,23 @@ public class PlacingShitCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(1))
+        {
+            Vector3 mouseScreenPos = Input.mousePosition;
+
+            //idk bro matiku ukradena z stack overflow(overflow?)
+            mouseScreenPos.z = mainCamera.transform.position.z;
+
+
+            Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
+
+            Debug.Log("World Position: " + mouseWorldPos);
+            GameObject Temp = ClosestOb(mouseWorldPos);
+            RightClickInfoCanvas.SetActive(true);
+            HasBuilding.text = Temp.GetComponent<TileManager>().HasBuilding.ToString();
+            TerrainType.text = Temp.GetComponent<TileManager>().TerrainType.ToString();
+            BuidlingType.text = Temp.GetComponent<TileManager>().BuildingType.ToString();
+        }
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("fdzkgdskz");
