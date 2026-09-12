@@ -12,9 +12,9 @@ public class DataStorage : ScriptableObject
     public int AvailableFood = 0;
     public int AvailableHousing = 100;
     public int Workers;
-    
-    public int Stone;
-    public int Wood;
+
+    public int Stone = 100;
+    public int Wood = 100;
     public int brick;
 
     
