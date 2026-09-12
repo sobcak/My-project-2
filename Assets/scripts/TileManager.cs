@@ -28,7 +28,7 @@ public class TileManager : MonoBehaviour
         if (HasBuilding)
         {
             SetSpriteForBuilding(BuildingType);
-            Debug.Log("reached update");
+            //Debug.Log("reached update");
         }
     }
 
@@ -58,12 +58,17 @@ public enum TerrainType
 
 public enum BuildingType
 {
+    Building1,
+    Building2,
+    Building3,
+    Farm,
+    Mine,
+}
+
+public enum SubType
+{
     Storage,
-    Housing,
-    Farming,
-    Forestry,
-    Saw,
-    Workshop
+    Production,
 }
 
     
