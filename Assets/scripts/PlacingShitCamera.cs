@@ -91,6 +91,7 @@ public class PlacingShitCamera : MonoBehaviour
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Forestry"):
+                    Debug.Log("we for");
                     tile = Temp.GetComponent<TileManager>();
                     if (tile.TerrainType == TerrainType.Water)
                     {
@@ -98,6 +99,7 @@ public class PlacingShitCamera : MonoBehaviour
                     }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Forestry)))
                     {
+                        Debug.Log("fi");
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();

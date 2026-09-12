@@ -27,6 +27,7 @@ public class LeChoiceSystem : MonoBehaviour
     public void ChooseForestry()
     {
         WeBeChoosing = "Forestry";
+        Debug.Log(WeBeChoosing);
     }
     public void ChooseSaw()
     {

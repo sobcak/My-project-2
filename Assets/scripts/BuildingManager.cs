@@ -103,6 +103,9 @@ public class BuildingManager : MonoBehaviour
             case BuildingType.Mine:
                 Debug.Log("Mine");
                 return BuildingFactory.Mine with { };
+            case BuildingType.Forestry:
+                Debug.Log("Forestry");
+                return BuildingFactory.Forestry with { };
             default:
                 return null;
         }
