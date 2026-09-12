@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class BuildingManager : MonoBehaviour
 {
@@ -57,8 +58,10 @@ public class BuildingManager : MonoBehaviour
                 // Add production output scaled by workforce and era
                 
                 Debug.Log(DataStorage.Instance.Wood);
-                
-                DataStorage.Instance.Wood += b.MaterialProduction.Wood * b.CurrentWorkforce * bonusScaling;
+
+                int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce * bonusScaling;
+                DataStorage.Instance.Wood += woodToAdd;
+                Debug.Log("Wood to Add " +  woodToAdd);
                 DataStorage.Instance.Stone += b.MaterialProduction.Stone * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.brick += b.MaterialProduction.Bricks * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.AvailableFood += b.MaterialProduction.Food * b.CurrentWorkforce * bonusScaling;
@@ -84,6 +87,7 @@ public class BuildingManager : MonoBehaviour
             // Add bonus space for storage
             if (b.BuildingType == BuildingType.Storage)
             {
+                DataStorage.Instance.AvailableHousing = DataStorage.Instance.AvailableHousing + b.BonusHousing;
                 DataStorage.Instance.MaxResources  = DataStorage.Instance.MaxResources + b.BonusSpace;
             }
             
