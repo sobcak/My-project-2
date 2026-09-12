@@ -18,7 +18,7 @@ public class Human
     }
     public void Initialize()
     {
-        int minOffset = -30;
+        int minOffset = -25;
         int maxOffset = 20;
         MaxAge = 40 + UnityEngine.Random.Range(minOffset, maxOffset);
     }
