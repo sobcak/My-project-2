@@ -61,6 +61,14 @@ public enum BuildingType
     Building1,
     Building2,
     Building3,
+    Farm,
+    Mine,
+}
+
+public enum SubType
+{
+    Storage,
+    Production,
 }
 
     
