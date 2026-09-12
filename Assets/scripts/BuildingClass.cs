@@ -69,7 +69,17 @@ public class BuildingFactory
         CurrentWorkforce = 0,
         Priority = 2,
     };
-
+    public static Building Well = new Building
+    {
+        BuildingType = BuildingType.Well,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 5, Stone: 10, Bricks: 0),
+        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0),
+        DesiredWorkforce = 0,
+        CurrentWorkforce = 0,
+        Priority = 2,
+    };
 
 
 }
