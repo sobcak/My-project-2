@@ -99,16 +99,14 @@ public class BuildingManager : MonoBehaviour
         {
             case BuildingType.Farm:
                 Debug.Log("Farm");
-                return BuildingFactory.Farm with { };
+                return BuildingFactory.CreateFarm() with { };
             case BuildingType.Mine:
                 Debug.Log("Mine");
-                return BuildingFactory.Mine with { };
+                return BuildingFactory.CreateMine() with { };
             case BuildingType.Forestry:
                 Debug.Log("Forestry");
-                return BuildingFactory.Forestry with { };
-            case BuildingType.Well:
-                Debug.Log("Well");
-                return BuildingFactory.Well with { };
+                return BuildingFactory.CreateForestry() with { };
+           
             default:
                 return null;
         }
