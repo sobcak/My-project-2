@@ -1,67 +1,42 @@
-using System;
-using UnityEngine;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using Random = UnityEngine.Random;
+using UnityEngine;
 
 public class HumanManagerScript : MonoBehaviour
 {
     public List<Human> humanRegistry = new List<Human>();
-    List<int> KillHelper =  new List<int>();
-
-    public DataStorage dataAsset;
-    
 
     void Start()
     {
-        if (dataAsset == null)
+        transform.position = new Vector2(5015, 5015);
+
+        // Populate
+        for (int i = 0; i < 5; i++)
         {
-            dataAsset = new DataStorage();
+            CreateHuman();
         }
-        
-        transform.position =  new Vector2(5015,5015);
-        // Test create
-        CreateHuman();
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Triggered overlap with: " + other.name);
+        Debug.Log(DataStorage.Instance.NumberOfHumans + " Human number of humans");
+
         KillOldHuman();
         Age();
         HaveKids();
     }
-    
+
     void CreateHuman()
     {
-        //Debug.Log("Person was born");
         Human human = new Human();
         humanRegistry.Add(human);
-        dataAsset.NumberOfHumans = humanRegistry.Count;
+        DataStorage.Instance.NumberOfHumans = humanRegistry.Count;
     }
-    
+
     void KillOldHuman()
     {
-        //Debug.Log("Kill Reached");
-        foreach (Human human in humanRegistry)
-        {
-            if (human.CurrentAge == human.MaxAge)
-            {
-                
-                KillHelper.Add(humanRegistry.IndexOf(human));  // que their index 
-                //Debug.Log("Person died");
-            }
-        }
-
-        if (KillHelper.Count > 0)
-        {
-            foreach (int i in KillHelper)
-            {
-                humanRegistry.RemoveAt(i);
-            }
-        }
-
-        dataAsset.NumberOfHumans = humanRegistry.Count;
+        humanRegistry.RemoveAll(human => human.CurrentAge >= human.MaxAge);
+        DataStorage.Instance.NumberOfHumans = humanRegistry.Count;
     }
 
     void Age()
@@ -75,27 +50,22 @@ public class HumanManagerScript : MonoBehaviour
     void HaveKids()
     {
         Debug.Log("Kids Reached");
-        if (dataAsset.AvailableFood > dataAsset.NumberOfHumans + dataAsset.NumberOfHumans * 0.2) // If we have food to spare
+        
+        float foodRequirement = DataStorage.Instance.NumberOfHumans * 1.2f;
+        float housingRequirement = DataStorage.Instance.NumberOfHumans * 1.1f;
+
+        if (DataStorage.Instance.AvailableFood > foodRequirement && 
+            DataStorage.Instance.AvailableHousing > housingRequirement)
         {
-            if (dataAsset.AvailableHousing > dataAsset.NumberOfHumans + dataAsset.NumberOfHumans * 0.1)
+            int pairs = DataStorage.Instance.NumberOfHumans / 2;
+            for (int i = 0; i < pairs; i++)
             {
-                for (int i = 0; i < dataAsset.NumberOfHumans / 2; i++)
+                int kid = Random.Range(0, 9);
+                if (kid == 8)
                 {
-                    int kid = Random.Range(0, 9);
-                    if (kid == 8) // Kid is born
-                    {
-                        CreateHuman();
-                    }
-                    
+                    CreateHuman();
                 }
             }
-        } 
+        }
     }
-
-    
-    
-    
-    
-    
-    
 }
