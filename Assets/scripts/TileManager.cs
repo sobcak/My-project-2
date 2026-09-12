@@ -23,11 +23,12 @@ public class TileManager : MonoBehaviour
     }
 
 
-    void UpdateBuilding()
+    public void UpdateBuilding()
     {
         if (HasBuilding)
         {
             SetSpriteForBuilding(BuildingType);
+            Debug.Log("reached update");
         }
     }
 
@@ -40,7 +41,7 @@ public class TileManager : MonoBehaviour
 
     void SetSpriteForBuilding(BuildingType buildingType) // set the sprite of the buildingDisplayer with spriterenderer to some sprite at specific location
     {
-        spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/Buildings/" + BuildingType);
+        spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Buildings/{BuildingType}");
     }
 
    

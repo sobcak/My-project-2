@@ -12,7 +12,7 @@ public class fileReaderTemporary
         {
             for (int y = MappingHeight; y >= 0; y--)
             {
-                string line = File.ReadLines("Jsynu/map").Skip(14).Take(1).First();
+                string line = File.ReadLines("Jsynu/map").Skip(y).Take(1).First();
             }
         }
     }
