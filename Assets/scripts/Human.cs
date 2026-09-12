@@ -1,6 +1,7 @@
 using System;
 using Random = UnityEngine.Random;
 
+[System.Serializable]
 public class Human
 {
     public int MaxAge; 
