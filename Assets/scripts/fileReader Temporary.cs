@@ -24,6 +24,10 @@ public class fileReaderTemporary
             }
         }
     }
+    public static void ClearCords()
+    {
+
+    }
     public static char Coordinance(Vector2 MapCords)
     {
         int y = (int)MapCords.y;

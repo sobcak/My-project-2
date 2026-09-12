@@ -37,9 +37,38 @@ public class PlacingShitCamera : MonoBehaviour
             Debug.Log("World Position: " + mouseWorldPos);
             GameObject Temp = ClosestOb(mouseWorldPos);
             Debug.Log(Temp);
-            Temp.GetComponent<TileManager>().BuildingType = BuildingType.Building1;
-            Temp.GetComponent<TileManager>().HasBuilding = true;
-            Temp.GetComponent<TileManager>().UpdateBuilding();
+            switch (LeChoiceSystem.WeBeChoosing)
+            {
+                case ("Nothing"):
+                    break;
+                case ("Housing"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Housing;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    break;
+                case ("Farming"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farming;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    break;
+                case ("Forestry"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    break;
+                case ("Saw"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    break;
+                case ("Workshop"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    break;
+                
+            }
+
         }
     }
     public GameObject ClosestOb(Vector2 SearchPoint)

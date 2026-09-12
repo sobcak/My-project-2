@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 184662061d6c05c488e3421b41739670
+guid: 6fd6a5f668fcb3045ad1342baf3fa16a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2612935745815224767
-    second: Chaple_0
+      213: 5420592431157545008
+    second: Chaple2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -102,13 +102,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chaple_0
+      name: Chaple2_0
       rect:
         serializedVersion: 2
         x: 2
-        y: 4
+        y: 2
         width: 27
-        height: 39
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,8 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb1ac368733034420800000000000000
-      internalID: 2612935745815224767
+      spriteID: 038015bb810d93b40800000000000000
+      internalID: 5420592431157545008
       vertices: []
       indices: 
       edges: []
@@ -137,7 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Chaple_0: 2612935745815224767
+      Chaple2_0: 5420592431157545008
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

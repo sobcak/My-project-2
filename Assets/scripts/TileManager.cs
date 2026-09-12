@@ -58,9 +58,12 @@ public enum TerrainType
 
 public enum BuildingType
 {
-    Building1,
-    Building2,
-    Building3,
+    Storage,
+    Housing,
+    Farming,
+    Forestry,
+    Saw,
+    Workshop
 }
 
     
