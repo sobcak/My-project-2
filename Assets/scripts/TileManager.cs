@@ -64,7 +64,10 @@ public enum BuildingType
     Housing,
     Forestry,
     Saw,
-    Workshop
+    Workshop,
+    Well,
+    School,
+    Smelter,
 }
 
 public enum SubType
