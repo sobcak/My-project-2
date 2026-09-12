@@ -83,10 +83,14 @@ public class BuildingManager : MonoBehaviour
             DataStorage.Instance.Wood -= b.MaterialCost.Wood;
             DataStorage.Instance.Stone -= b.MaterialCost.Stone;
             DataStorage.Instance.brick -= b.MaterialCost.Bricks;
-            
+
             // Add bonus space for storage
-            if (b.BuildingType == BuildingType.Storage)
+            Debug.Log("suck");
+            Debug.Log(b);
+            Debug.Log(b.BuildingType.ToString());
+            if (b.SubType == SubType.Storage)
             {
+                Debug.Log("plus");
                 DataStorage.Instance.Housing = DataStorage.Instance.Housing + b.BonusHousing;
                 DataStorage.Instance.MaxResources  = DataStorage.Instance.MaxResources + b.BonusSpace;
             }
