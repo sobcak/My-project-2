@@ -91,6 +91,11 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
+
+                    if (tile.TerrainType == TerrainType.Desert)
+                    {
+                        break;
+                    }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm)))
                     {
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
