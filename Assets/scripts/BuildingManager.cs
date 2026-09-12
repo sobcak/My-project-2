@@ -140,18 +140,22 @@ public class BuildingManager : MonoBehaviour
     {
         buildings.Sort((a, b) => a.Priority.CompareTo(b.Priority));
     }
-    
+
     public static bool RegisterBuilding(Building b)
     {
         if (b != null)
-            if(TryToBuild(b))
-                buildings.Add(b);
-            else
+        {
+            if (TryToBuild(b))
             {
-                Debug.Log("Not enough materials");
+                buildings.Add(b);
+                return true;
             }
+        }
+        return false;
     }
-    
+
+
+
     void UnregisterBuilding(Building b)
     {
         if (b != null && buildings.Contains(b))
