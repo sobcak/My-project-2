@@ -96,9 +96,13 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Forestry)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                       
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Saw"):
@@ -107,9 +111,13 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Saw)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                       
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Workshop"):
@@ -118,9 +126,13 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Workshop)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                    
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Mine"):
