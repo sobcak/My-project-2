@@ -107,9 +107,8 @@ public class BuildingManager : MonoBehaviour
         int currentFocus = 0;
         Building focusedBuilding = null;
 
-        for (int i = 0; i < DataStorage.Instance.NumberOfHumans; i++)
+        for (int i = 0; i < DataStorage.Instance.Workers; i++)
         {
-            // Fixed off-by-one check to safely access list elements
             if (currentFocus < buildings.Count)
             {
                 focusedBuilding = buildings[currentFocus];

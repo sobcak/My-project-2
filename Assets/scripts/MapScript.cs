@@ -27,20 +27,23 @@ public class MapScript : MonoBehaviour
 
                 float OffsetX = (x - y) * (scale.x / 2f);
                 float OffsetY = (x + y) * (scale.y / 4f);
-                GameObject PlacedTile = Instantiate(Tile, new Vector2(OffsetX, OffsetY), Quaternion.identity);
+                GameObject PlacedTile = Instantiate(Tile, new Vector3(OffsetX, OffsetY,0f), Quaternion.identity);
 
                 switch (tmp = fileReaderTemporary.Coordinance(new Vector2(x, y))){
                     case 'P':
                         PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Grass;
                         PlacedTile.GetComponent<TileManager>().SetTerrainSprite();
+                        PlacedTile.transform.position = new Vector3(OffsetX, OffsetY, -1f);
                         break;
                     case 'S':
                         PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Desert;
                         PlacedTile.GetComponent<TileManager>().SetTerrainSprite();
+                        PlacedTile.transform.position = new Vector3(OffsetX, OffsetY, -0.9f);
                         break;
                     case 'W':
                         PlacedTile.GetComponent<TileManager>().TerrainType = TerrainType.Water;
                         PlacedTile.GetComponent<TileManager>().SetTerrainSprite();
+                        PlacedTile.transform.position = new Vector3(OffsetX, OffsetY, -0.8f);
                         break;
                 }
                 
