@@ -20,7 +20,7 @@ public class BuildingManager:MonoBehaviour
         RegisterBuilding(CreateBuilding(BuildingType.Farm));
     }
 
-    Building CreateBuilding(BuildingType type)
+    public static Building CreateBuilding(BuildingType type)
     {
         switch (type)
         {
@@ -77,7 +77,7 @@ public class BuildingManager:MonoBehaviour
     
     
     
-    void RegisterBuilding(Building b)
+    public static void RegisterBuilding(Building b)
     {
         if(b != null)
             buildings.Add(b);

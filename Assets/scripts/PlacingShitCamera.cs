@@ -53,6 +53,7 @@ public class PlacingShitCamera : MonoBehaviour
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
+                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Forestry"):
@@ -77,6 +78,7 @@ public class PlacingShitCamera : MonoBehaviour
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
+                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
 
