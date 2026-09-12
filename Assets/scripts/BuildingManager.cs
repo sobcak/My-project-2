@@ -52,8 +52,37 @@ public class BuildingManager : MonoBehaviour
                 Debug.Log($"New amount of Wood {DataStorage.Instance.Wood} New amount of Stone {DataStorage.Instance.Stone} New Amount of Food {DataStorage.Instance.AvailableFood}");
             }
         }
-    } // Added missing closing brace for GetToWork()
+    }
+    
+    
+    // fuck 
 
+    static bool TryToBuild(Building b)
+    {
+        if (DataStorage.Instance.Wood >= b.MaterialCost.Wood && DataStorage.Instance.Stone >= b.MaterialCost.Stone &&
+            DataStorage.Instance.brick >= b.MaterialCost.Bricks)
+        {
+            DataStorage.Instance.Wood -= b.MaterialCost.Wood;
+            DataStorage.Instance.Stone -= b.MaterialCost.Stone;
+            DataStorage.Instance.brick -= b.MaterialCost.Bricks;
+            return true;
+        }
+        return false;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public static Building CreateBuilding(BuildingType type)
     {
         switch (type)
@@ -115,7 +144,12 @@ public class BuildingManager : MonoBehaviour
     public static void RegisterBuilding(Building b)
     {
         if (b != null)
-            buildings.Add(b);
+            if(TryToBuild(b))
+                buildings.Add(b);
+            else
+            {
+                Debug.Log("Not enough materials");
+            }
     }
     
     void UnregisterBuilding(Building b)

@@ -53,7 +53,7 @@ public class PlacingShitCamera : MonoBehaviour
                     Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
-                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
+                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm)); // here we create the object
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Forestry"):
@@ -86,6 +86,18 @@ public class PlacingShitCamera : MonoBehaviour
 
         }
     }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     public GameObject ClosestOb(Vector2 SearchPoint)
     {
       
