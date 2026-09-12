@@ -82,7 +82,7 @@ public static class BuildingFactory
         CurrentWorkforce = 0,
         Priority = 10,
         BonusSpace = 0,
-        BonusHousing = 3 + (1 * DataStorage.Instance.CurrentEra) // auto scaling housing
+        BonusHousing = 4 + (1 * DataStorage.Instance.CurrentEra) // auto scaling housing
     };
 
     public static Building CreateStorage() => new Building

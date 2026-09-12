@@ -3,7 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DataStorage", menuName = "Scriptable Objects/DataStorage")]
 public class DataStorage : ScriptableObject
 {
-    public int MaxResources { get; set; } = 40;
+    public int MaxResources { get; set; } = 50;
     
     
     /// <summary>
@@ -21,7 +21,7 @@ public class DataStorage : ScriptableObject
     public static DataStorage Instance { get; private set; }
 
     public int NumberOfHumans = 0;
-    public int AvailableFood = 30;
+    public int AvailableFood = 50;
     public int AvailableHousing => Housing - NumberOfHumans;
     public int Housing = 0;
     public int Workers;
