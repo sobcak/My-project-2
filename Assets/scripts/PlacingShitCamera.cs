@@ -70,10 +70,16 @@ public class PlacingShitCamera : MonoBehaviour
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Farm"):
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
-                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm)); // here we create the object
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                    else
+                    {
+                        Debug.Log("Not Enough Rescourscess");
+                    }
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Forestry"):
@@ -95,10 +101,16 @@ public class PlacingShitCamera : MonoBehaviour
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
                 case ("Mine"):
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
-                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Mine)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                    else
+                    {
+                        Debug.Log("Not Enough Rescourscess");
+                    }
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
 
