@@ -49,7 +49,7 @@ public class PlacingShitCamera : MonoBehaviour
                     Temp.GetComponent<TileManager>().UpdateBuilding();
                     break;
                 case ("Farming"):
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farming;
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
                     Temp.GetComponent<TileManager>().HasBuilding = true;
                     Temp.GetComponent<TileManager>().UpdateBuilding();
                     break;
