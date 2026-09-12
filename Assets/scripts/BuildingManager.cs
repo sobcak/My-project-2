@@ -87,7 +87,7 @@ public class BuildingManager : MonoBehaviour
             // Add bonus space for storage
             if (b.BuildingType == BuildingType.Storage)
             {
-                DataStorage.Instance.AvailableHousing = DataStorage.Instance.AvailableHousing + b.BonusHousing;
+                DataStorage.Instance.Housing = DataStorage.Instance.Housing + b.BonusHousing;
                 DataStorage.Instance.MaxResources  = DataStorage.Instance.MaxResources + b.BonusSpace;
             }
             
