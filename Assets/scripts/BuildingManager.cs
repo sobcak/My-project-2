@@ -18,9 +18,21 @@ public class BuildingManager : MonoBehaviour
         RegisterBuilding(CreateBuilding(BuildingType.Farm));
     }
 
+    int CalculateWorkMultiplier(int Multiplier)
+    {
+        double final = Multiplier * 0.6;
+        if (final < 1)
+        {
+            final = 1;
+        }
+        return (int)final;
+    }
+
     public void GetToWork()
     {
         Building focusedBuilding = null;
+        
+        int BonusScaling = CalculateWorkMultiplier(DataStorage.Instance.CurrentEra);
 
         foreach (Building b in buildings)
         {
@@ -39,10 +51,10 @@ public class BuildingManager : MonoBehaviour
                 DataStorage.Instance.Stone -= requiredStone;
                 DataStorage.Instance.brick -= requiredBrick;
 
-                int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce;
-                int stoneToAdd = b.MaterialProduction.Stone * b.CurrentWorkforce;
-                int bricksToAdd = b.MaterialProduction.Bricks * b.CurrentWorkforce;
-                int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce;
+                int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce * BonusScaling;
+                int stoneToAdd = b.MaterialProduction.Stone * b.CurrentWorkforce * BonusScaling;
+                int bricksToAdd = b.MaterialProduction.Bricks * b.CurrentWorkforce * BonusScaling;
+                int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce * BonusScaling;
                 
                 DataStorage.Instance.Wood += woodToAdd;
                 DataStorage.Instance.Stone += stoneToAdd;
@@ -69,19 +81,6 @@ public class BuildingManager : MonoBehaviour
         }
         return false;
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     public static Building CreateBuilding(BuildingType type)
     {
