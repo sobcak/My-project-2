@@ -119,50 +119,10 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &9408772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9408773}
-  - component: {fileID: 9408776}
-  - component: {fileID: 9408775}
-  - component: {fileID: 9408774}
-  m_Layer: 5
-  m_Name: Button (Legacy) (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &9408773
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9408772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1234844467}
-  m_Father: {fileID: 843830069}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 864.47, y: -463.53}
-  m_SizeDelta: {x: 191.06, y: 152.92}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &9408774
+--- !u!114 &37593280 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6356517486099972471, guid: 2d44fe731d5c285b9a135806f9da3aca, type: 3}
+  m_PrefabInstance: {fileID: 7077070224920239996}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9408772}
   m_Enabled: 1
@@ -746,46 +706,15 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &454945558
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 663744612501069502, guid: 2d44fe731d5c285b9a135806f9da3aca, type: 3}
+  m_PrefabInstance: {fileID: 7077070224920239996}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454945556}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Tile has a building:'
---- !u!222 &454945559
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454945556}
-  m_CullTransparentMesh: 1
 --- !u!1 &476868070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,9 +1259,8 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!1 &768542613
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1905284287865096532, guid: 2d44fe731d5c285b9a135806f9da3aca, type: 3}
+  m_PrefabInstance: {fileID: 7077070224920239996}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -1367,9 +1295,8 @@ RectTransform:
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &768542615
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6159599004832405874, guid: 2d44fe731d5c285b9a135806f9da3aca, type: 3}
+  m_PrefabInstance: {fileID: 7077070224920239996}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 768542613}
   m_Enabled: 1
@@ -1720,11 +1647,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PerlinNoise
   button: {fileID: 0}
---- !u!1 &1039127839
+--- !u!1 &1220733419 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2575747912144298281, guid: 2d44fe731d5c285b9a135806f9da3aca, type: 3}
+  m_PrefabInstance: {fileID: 7077070224920239996}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -1855,9 +1781,8 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!1 &1081844275
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6254915250355475445, guid: 2d44fe731d5c285b9a135806f9da3aca, type: 3}
+  m_PrefabInstance: {fileID: 7077070224920239996}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -3147,9 +3072,8 @@ Rigidbody2D:
   m_Constraints: 0
 --- !u!1 &1898660937
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 678778873146445911, guid: 2d44fe731d5c285b9a135806f9da3aca, type: 3}
+  m_PrefabInstance: {fileID: 7077070224920239996}
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -3894,7 +3818,7 @@ SceneRoots:
   - {fileID: 635410319}
   - {fileID: 433624339}
   - {fileID: 357466830}
-  - {fileID: 843830069}
+  - {fileID: 7077070224920239996}
   - {fileID: 539685030}
   - {fileID: 6633570865831410484}
   - {fileID: 1579346437}
