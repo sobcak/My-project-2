@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 [System.Serializable]
@@ -12,12 +13,14 @@ public class Human
     
     public Human()
     {
-        int MinOfset = -30;
-        int MaxOfset = 20;
-        
-        MaxAge = 40 + Random.Range(MinOfset, MaxOfset);
         CurrentAge = 0;
         Homeless = false;
+    }
+    public void Initialize()
+    {
+        int minOffset = -30;
+        int maxOffset = 20;
+        MaxAge = 40 + UnityEngine.Random.Range(minOffset, maxOffset);
     }
     
     

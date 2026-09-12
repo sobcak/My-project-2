@@ -29,6 +29,7 @@ public class HumanManagerScript : MonoBehaviour
     void CreateHuman()
     {
         Human human = new Human();
+        human.Initialize();
         humanRegistry.Add(human);
         DataStorage.Instance.NumberOfHumans = humanRegistry.Count;
     }
