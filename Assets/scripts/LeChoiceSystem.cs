@@ -40,4 +40,20 @@ public class LeChoiceSystem : MonoBehaviour
     {
         WeBeChoosing = "Mine";
     }
+    public void ChooseWell()
+    {
+        WeBeChoosing = "Well";
+    }
+    public void ChooseSmelter()
+    {
+        WeBeChoosing = "Smelter";
+    }
+    public void ChooseChapel()
+    {
+        WeBeChoosing = "Chapel";
+    }
+    public void ChooseSchool()
+    {
+        WeBeChoosing = "School";
+    }
 }

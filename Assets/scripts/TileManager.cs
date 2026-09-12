@@ -17,7 +17,7 @@ public class TileManager : MonoBehaviour
     private void Awake()
     {
         // Attach the BuildingDisplayer to self with custom x coordinates :)
-        Vector3 position = new Vector3(transform.position.x, transform.position.y + BuildingOffset, transform.position.z-0.1f);
+        Vector3 position = new Vector3(transform.position.x, transform.position.y + BuildingOffset, transform.position.z-2f);
         spawnedObjectPrefab =  Instantiate(objectPrefab, position, Quaternion.identity);
         
     }
@@ -64,7 +64,10 @@ public enum BuildingType
     Housing,
     Forestry,
     Saw,
-    Workshop
+    Workshop,
+    Well,
+    School,
+    Smelter,
 }
 
 public enum SubType

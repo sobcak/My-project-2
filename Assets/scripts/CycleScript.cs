@@ -17,7 +17,6 @@ public class CycleScript : MonoBehaviour
     private GameObject temp;
 
 
-
     void FixedUpdate() // Fuck fixed update
     {
         timer++;
