@@ -36,6 +36,7 @@ public class PlacingShitCamera : MonoBehaviour
 
             Debug.Log("World Position: " + mouseWorldPos);
             GameObject Temp = ClosestOb(mouseWorldPos);
+            Debug.Log(Temp);
             Temp.GetComponent<TileManager>().BuildingType = BuildingType.Building1;
             Temp.GetComponent<TileManager>().HasBuilding = true;
             Temp.GetComponent<TileManager>().UpdateBuilding();
