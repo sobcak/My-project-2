@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.TextCore;
+using UnityEngine.UI;
+using System.Collections;
 
 public class PlacingShitCamera : MonoBehaviour
 {
@@ -7,6 +10,11 @@ public class PlacingShitCamera : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private LayerMask Layer;
     [SerializeField] private float SearchRadius = 20f;
+    [SerializeField] private GameObject RightClickInfoCanvas;
+    [SerializeField] private Text HasBuild;
+    [SerializeField] private Text Terrain;
+    [SerializeField] private Text TypeBuilding;
+    bool SelectionMode = false;
 
 
     
@@ -24,65 +32,85 @@ public class PlacingShitCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
-            Debug.Log("fdzkgdskz");
             Vector3 mouseScreenPos = Input.mousePosition;
 
             //idk bro matiku ukradena z stack overflow(overflow?)
             mouseScreenPos.z = mainCamera.transform.position.z;
 
-            
+
             Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
 
             Debug.Log("World Position: " + mouseWorldPos);
             GameObject Temp = ClosestOb(mouseWorldPos);
-            Debug.Log(Temp);
-            switch (LeChoiceSystem.WeBeChoosing)
-            {
-                case ("Nothing"):
-                    break;
-                case ("Housing"):
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Housing;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
-                    LeChoiceSystem.WeBeChoosing = "Nothing";
-                    break;
-                case ("Farm"):
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
-                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
-                    LeChoiceSystem.WeBeChoosing = "Nothing";
-                    break;
-                case ("Forestry"):
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
-                    LeChoiceSystem.WeBeChoosing = "Nothing";
-                    break;
-                case ("Saw"):
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
-                    LeChoiceSystem.WeBeChoosing = "Nothing";
-                    break;
-                case ("Workshop"):
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
-                    LeChoiceSystem.WeBeChoosing = "Nothing";
-                    break;
-                case ("Mine"):
-                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
-                    Temp.GetComponent<TileManager>().HasBuilding = true;
-                    Temp.GetComponent<TileManager>().UpdateBuilding();
-                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
-                    LeChoiceSystem.WeBeChoosing = "Nothing";
-                    break;
+            Debug.Log("has building: " + Temp.GetComponent<TileManager>().HasBuilding + "Terrain type:" + Temp.GetComponent<TileManager>().TerrainType + "BuildingType:" + Temp.GetComponent<TileManager>().BuildingType);
+            RightClickInfoCanvas.SetActive(true);
+            HasBuild.text = Temp.GetComponent<TileManager>().HasBuilding.ToString();
+            Terrain.text = Temp.GetComponent<TileManager>().TerrainType.ToString();
+            TypeBuilding.text = Temp.GetComponent<TileManager>().BuildingType.ToString();
+        }
+        if (Input.GetMouseButtonDown(0))
+        {
+            
+                Debug.Log("fdzkgdskz");
+                Vector3 mouseScreenPos = Input.mousePosition;
 
+                //idk bro matiku ukradena z stack overflow(overflow?)
+                mouseScreenPos.z = mainCamera.transform.position.z;
+
+            
+                Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(mouseScreenPos);
+
+                Debug.Log("World Position: " + mouseWorldPos);
+                GameObject Temp = ClosestOb(mouseWorldPos);
+                Debug.Log(Temp);
+                switch (LeChoiceSystem.WeBeChoosing)
+                {
+                    case ("Nothing"):
+                        break;
+                    case ("Housing"):
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Housing;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                        LeChoiceSystem.WeBeChoosing = "Nothing";
+                        break;
+                    case ("Farm"):
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                        BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
+                        LeChoiceSystem.WeBeChoosing = "Nothing";
+                        break;
+                    case ("Forestry"):
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                        LeChoiceSystem.WeBeChoosing = "Nothing";
+                        break;
+                    case ("Saw"):
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                        LeChoiceSystem.WeBeChoosing = "Nothing";
+                        break;
+                    case ("Workshop"):
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                        LeChoiceSystem.WeBeChoosing = "Nothing";
+                        break;
+                    case ("Mine"):
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                        BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
+                        LeChoiceSystem.WeBeChoosing = "Nothing";
+                        break;
+
+                
             }
+           
 
         }
     }
@@ -114,6 +142,10 @@ public class PlacingShitCamera : MonoBehaviour
        
         return ClosestCollider != null ? ClosestCollider.gameObject : null;
 
+
+    }
+    public void SelectShit()
+    {
 
     }
 }
