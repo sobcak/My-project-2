@@ -98,6 +98,32 @@ public static class BuildingFactory
         BonusHousing = 0,
         BonusSpace = 5 + (2 * DataStorage.Instance.CurrentEra) // scaling 
     };
+    public static Building CreateWell() => new Building
+    {
+        BuildingType = BuildingType.Well,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 5, Stone: 10, Bricks: 0),
+        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 1),
+        DesiredWorkforce = 0,
+        CurrentWorkforce = 0,
+        Priority = 10,
+        BonusSpace = 0,
+        BonusHousing = 0
+    };
+    public static Building CreateSaw() => new Building
+    {
+        BuildingType = BuildingType.Saw,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 8, Stone: 15, Bricks: 0),
+        MaterialToRun = (Wood: 8, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 1),
+        DesiredWorkforce = 0,
+        CurrentWorkforce = 0,
+        Priority = 10,
+        BonusSpace = 0,
+        BonusHousing = 0
+    };
 }
 
 

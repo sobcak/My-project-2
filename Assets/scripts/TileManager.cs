@@ -68,6 +68,7 @@ public enum BuildingType
     Well,
     School,
     Smelter,
+    Chapel
 }
 
 public enum SubType
