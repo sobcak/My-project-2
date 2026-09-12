@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public class Play : MonoBehaviour
+public class ButtonLogic : MonoBehaviour
 {
     public Button PlayButton;
     public Button QuitButton;
