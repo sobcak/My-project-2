@@ -9,6 +9,8 @@ public class PlacingShitCamera : MonoBehaviour
     [SerializeField] private float SearchRadius = 20f;
 
 
+    
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,9 +39,51 @@ public class PlacingShitCamera : MonoBehaviour
             Debug.Log("World Position: " + mouseWorldPos);
             GameObject Temp = ClosestOb(mouseWorldPos);
             Debug.Log(Temp);
-            Temp.GetComponent<TileManager>().BuildingType = BuildingType.Building1;
-            Temp.GetComponent<TileManager>().HasBuilding = true;
-            Temp.GetComponent<TileManager>().UpdateBuilding();
+            switch (LeChoiceSystem.WeBeChoosing)
+            {
+                case ("Nothing"):
+                    break;
+                case ("Housing"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Housing;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+                case ("Farm"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+                case ("Forestry"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+                case ("Saw"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+                case ("Workshop"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+                case ("Mine"):
+                    Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
+                    Temp.GetComponent<TileManager>().HasBuilding = true;
+                    Temp.GetComponent<TileManager>().UpdateBuilding();
+                    BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Farm));
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+
+            }
+
         }
     }
     public GameObject ClosestOb(Vector2 SearchPoint)
