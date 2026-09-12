@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
 guid: dbe419901183d4b41bfd4ea9d1cd016a
-TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 172622306924273287
-    second: Mine2_0
-========
-guid: 07a0e45705ccc782ab3271957f2da84a
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: 4619080980983763939
     second: Play2_0
->>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -111,11 +102,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
-      name: Mine2_0
-========
       name: Play2_0
->>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
       rect:
         serializedVersion: 2
         x: 0
@@ -130,13 +117,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
-      spriteID: 78e9784d217456200800000000000000
-      internalID: 172622306924273287
-========
       spriteID: 3e3dc44eda54a1040800000000000000
       internalID: 4619080980983763939
->>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
       vertices: []
       indices: 
       edges: []
@@ -155,11 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-<<<<<<<< HEAD:Assets/Resources/sprites/Buildiings/Mine2.png.meta
-      Mine2_0: 172622306924273287
-========
       Play2_0: 4619080980983763939
->>>>>>>> 32d1be579a4c2274745e7410fb78a5fb0f9cf7c9:Assets/Play2.png.meta
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
