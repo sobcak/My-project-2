@@ -41,7 +41,7 @@ public class TileManager : MonoBehaviour
 
     void SetSpriteForBuilding(BuildingType buildingType) // set the sprite of the buildingDisplayer with spriterenderer to some sprite at specific location
     {
-        spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Buildings/{BuildingType}");
+        spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Buildings/TestingDirectory/{BuildingType}");
     }
 
    
@@ -58,11 +58,13 @@ public enum TerrainType
 
 public enum BuildingType
 {
-    Building1,
-    Building2,
-    Building3,
     Farm,
     Mine,
+    Storage,
+    Housing,
+    Forestry,
+    Saw,
+    Workshop
 }
 
 public enum SubType

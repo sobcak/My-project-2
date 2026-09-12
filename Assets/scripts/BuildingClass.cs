@@ -16,6 +16,8 @@ public record Building
     // Workers
     public int DesiredWorkforce { get; set; } = 0;
     
+    public int CurrentWorkforce { get; set; } = 0;
+    
     // Priority 
     public int Priority { get; set; } = 0;
 
@@ -31,6 +33,7 @@ public class BuildingFactory
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
         MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 10),
         DesiredWorkforce = 5,
+        CurrentWorkforce = 0,
         Priority = 1,
     };
 
@@ -41,6 +44,7 @@ public class BuildingFactory
         MaterialCost = (Wood: 10, Stone: 10, Bricks: 0),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
         DesiredWorkforce = 5,
+        CurrentWorkforce = 0,
         Priority = 2,
     };
     
