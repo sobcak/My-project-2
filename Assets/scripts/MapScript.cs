@@ -8,7 +8,7 @@ public class MapScript : MonoBehaviour
     Vector2 scale;
     Vector2 Temp;
     char tmp;
-
+    float z_offset = 0.01f;
 
 
     private void Awake()
@@ -27,6 +27,7 @@ public class MapScript : MonoBehaviour
 
                 float OffsetX = (x - y) * (scale.x / 2f);
                 float OffsetY = (x + y) * (scale.y / 4f);
+               
                 GameObject PlacedTile = Instantiate(Tile, new Vector3(OffsetX, OffsetY,0f), Quaternion.identity);
 
                 switch (tmp = fileReaderTemporary.Coordinance(new Vector2(x, y))){
