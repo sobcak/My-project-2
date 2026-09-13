@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class EraManager : MonoBehaviour
 {
@@ -8,21 +9,27 @@ public class EraManager : MonoBehaviour
 
     void Start()
     {
+        
+        transform.position = new Vector2(5025,5025);
         EraRequrimentsById.Add(1, new Era1());
         EraRequrimentsById.Add(2, new Era2());
         EraRequrimentsById.Add(3, new Era3());
 
         if (DataStorage.Instance.EraDebug)
         {
+            DataStorage.Instance.MaxResources = 1000;
             DataStorage.Instance.Well = true;
-            DataStorage.Instance.Furniture = 10;
-            DataStorage.Instance.NumberOfHumans = 30;
+            DataStorage.Instance.Chapple = true;
+            DataStorage.Instance.School = true;
+            DataStorage.Instance.AvailableFood = 500;
+            DataStorage.Instance.Furniture = 100;
+            DataStorage.Instance.Tools = 45;
+            DataStorage.Instance.NumberOfHumans = 100;
         }
 
         if (EraRequrimentsById.ContainsKey(DataStorage.Instance.CurrentEra))
         {
             nextEraRequriment = EraRequrimentsById[DataStorage.Instance.CurrentEra];
-            transmitSignal.TriggerCommand();
         }
         
 
@@ -33,20 +40,33 @@ public class EraManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (DataStorage.Instance == null)
-        {
-            Debug.LogError("DataStorage.Instance is null fuck my life");
-            return;
-        }
+        if (DataStorage.Instance == null) return;
 
-        if (nextEraRequriment != null && nextEraRequriment.ValidateNextEraRequirement(EraRequrimentsById, out EraRequriment nextEra))
+        int currentEra = DataStorage.Instance.CurrentEra;
+
+        if (EraRequrimentsById.TryGetValue(currentEra, out EraRequriment currentReq))
         {
-            Debug.Log($"Advanced to Era: {DataStorage.Instance.CurrentEra}");   
-            nextEraRequriment = nextEra;
-        }
-        else
-        {
-            Debug.Log("Requirements not met or already at max era.");
+            if (currentReq.ValidateNextEraRequirement(EraRequrimentsById, out EraRequriment nextEra))
+            {
+                Debug.Log($"Advanced to Era: {DataStorage.Instance.CurrentEra}");
+                if (DataStorage.Instance.WonGame)
+                {
+                    Debug.Log($"[AFTER TEST] WonGame: {DataStorage.Instance.CurrentEra}");
+                }
+                nextEraRequriment = nextEra;
+            }
+            else
+            {
+                if (DataStorage.Instance.WonGame)
+                {
+                    Debug.Log($"[AFTER TEST] WonGame: {DataStorage.Instance.CurrentEra}");
+                }
+                else
+                {
+                    Debug.Log("Requirements not met");
+
+                }
+            }
         }
     }
 }
