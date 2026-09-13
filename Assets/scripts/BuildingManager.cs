@@ -34,66 +34,61 @@ public class BuildingManager : MonoBehaviour
     public void GetToWork()
     {
         int bonusScaling = CalculateWorkMultiplier(DataStorage.Instance.CurrentEra);
-        Debug.Log($"Got To Work");
-        
+
         foreach (Building b in buildings)
         {
-            Debug.Log("Testy");
-            if (b.CurrentWorkforce <= 0) continue; // Skip buildings without workers
+            if (b.CurrentWorkforce <= 0) continue; //skip building without wokres
 
             int requiredWood = b.MaterialToRun.Wood;
             int requiredStone = b.MaterialToRun.Stone;
             int requiredBrick = b.MaterialToRun.Bricks;
 
-            // Check if there are enough resources to run production
-            if (DataStorage.Instance.Wood >= requiredWood && 
-                DataStorage.Instance.Stone >= requiredStone && 
+            //verify you have enought materials
+            if (DataStorage.Instance.Wood >= requiredWood &&
+                DataStorage.Instance.Stone >= requiredStone &&
                 DataStorage.Instance.brick >= requiredBrick)
             {
-                // Deduct inputs
+                //deduct inputs
                 DataStorage.Instance.Wood -= requiredWood;
                 DataStorage.Instance.Stone -= requiredStone;
                 DataStorage.Instance.brick -= requiredBrick;
 
-                // Add production output scaled by workforce and era
-                
-                Debug.Log("Here");
-
+                //add production outputs 
                 int woodToAdd = (int)Math.Floor((double)b.MaterialProduction.Wood * b.CurrentWorkforce / b.DesiredWorkforce * bonusScaling);
                 DataStorage.Instance.Wood += woodToAdd;
+
                 int stoneToAdd = (int)Math.Floor((double)b.MaterialProduction.Stone * b.CurrentWorkforce / b.DesiredWorkforce * bonusScaling);
                 DataStorage.Instance.Stone += stoneToAdd;
-                int brickToAdd = (int)Math.Floor((double)2 * b.CurrentWorkforce / b.DesiredWorkforce * bonusScaling); //there is a constant 2 for the time being i will fix it in the morning it works this way
-               /* Debug.Log(brickToAdd.ToString() +"hereous");
-                Debug.Log(b.MaterialProduction.Bricks+"bricky");
-                Debug.Log(b.CurrentWorkforce + "   hereous2" + b.MaterialProduction.Bricks);*/
+
+                //smelter shitty code
+                int brickToAdd = (int)Math.Floor((double)b.MaterialProduction.Bricks *(b.CurrentWorkforce / b.DesiredWorkforce) * bonusScaling);
                 DataStorage.Instance.brick += brickToAdd;
-                Debug.Log(DataStorage.Instance.brick + " brick after");
 
                 int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.AvailableFood += foodToAdd;
-                
+
                 int toolsToAdd = b.MaterialProduction.Tools * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.Tools += toolsToAdd;
+
                 int furnitureToAdd = b.MaterialProduction.Furniture * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.Furniture += furnitureToAdd;
-                Debug.Log(DataStorage.Instance.Wood + " wood after");
-
             }
         }
     }
-    
-    
+
+
     // fuck 
 
     static bool TryToBuild(Building b)
     {
         if (DataStorage.Instance.Wood >= b.MaterialCost.Wood && DataStorage.Instance.Stone >= b.MaterialCost.Stone &&
-            DataStorage.Instance.brick >= b.MaterialCost.Bricks)
+            DataStorage.Instance.brick >= b.MaterialCost.Bricks && DataStorage.Instance.Furniture >= b.MaterialCost.Furniture && DataStorage.Instance.Tools >= b.MaterialCost.Tools)
         {
             DataStorage.Instance.Wood -= b.MaterialCost.Wood;
             DataStorage.Instance.Stone -= b.MaterialCost.Stone;
             DataStorage.Instance.brick -= b.MaterialCost.Bricks;
+            DataStorage.Instance.Furniture -= b.MaterialCost.Furniture;
+            DataStorage.Instance.Tools -= b.MaterialCost.Tools;
 
             // Add bonus space for storage
             Debug.Log("suck");

@@ -873,7 +873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7d906a905158dee9074482b1f456e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::bettermenu
-  JmenoSceny: test_scena
+  JmenoSceny: backupProDavida
   sklo: {fileID: 0}
 --- !u!1 &1452385379
 GameObject:

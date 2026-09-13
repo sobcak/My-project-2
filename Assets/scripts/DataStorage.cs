@@ -3,6 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DataStorage", menuName = "Scriptable Objects/DataStorage")]
 public class DataStorage : ScriptableObject
 {
+    // DEBUG
+    public bool EraDebug = true;
+    
+    
     public int MaxResources { get; set; } = 50;
     
     
@@ -14,8 +18,9 @@ public class DataStorage : ScriptableObject
 
 
     // Constructed important buildings
-    public bool Chapple = true;
+    public bool Chapple;
     public bool School;
+    public bool Well;
 
     // Global static reference
     public static DataStorage Instance { get; private set; }
