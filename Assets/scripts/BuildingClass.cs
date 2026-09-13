@@ -167,7 +167,7 @@ public static class BuildingFactory
     {
         BuildingType = BuildingType.School,
         SubType = SubType.Storage,
-        MaterialCost = (Wood: 20, Stone: 20, Bricks: 20, Furniture: 10, Tools: 10),
+        MaterialCost = (Wood: 30, Stone: 20, Bricks: 20, Furniture: 10, Tools: 10),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
         MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 0, Tools: 0),
         DesiredWorkforce = 0,
