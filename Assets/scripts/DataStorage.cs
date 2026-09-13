@@ -4,7 +4,7 @@ using UnityEngine;
 public class DataStorage : ScriptableObject
 {
     // DEBUG
-    public bool EraDebug = true;
+    public bool EraDebug = false; // Debug set true only when debuging or it will break the fucking game !!!!!!!!!!!!!!!!!!!!!!!
     
     
     public int MaxResources { get; set; } = 50;
