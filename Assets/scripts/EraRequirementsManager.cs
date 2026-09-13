@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+using UnityEngine;
+using System.Collections.Generic;
+
 public class EraManager : MonoBehaviour
 {
     public EraRequriment nextEraRequriment;
@@ -8,32 +11,40 @@ public class EraManager : MonoBehaviour
 
     void Start()
     {
-        // Populate requirements
+        // Populate all era requirements
         EraRequrimentsById.Add(1, new Era1());
         EraRequrimentsById.Add(2, new Era2());
+        EraRequrimentsById.Add(3, new Era3());
 
-        if (EraRequrimentsById.ContainsKey(1))
+        if (EraRequrimentsById.ContainsKey(DataStorage.Instance.CurrentEra))
         {
-            nextEraRequriment = EraRequrimentsById[1];
+            nextEraRequriment = EraRequrimentsById[DataStorage.Instance.CurrentEra];
         }
-        
-        transform.position = new Vector2(5025, 5025);
+
+        DataStorage.Instance.Furniture = 10;
+        DataStorage.Instance.NumberOfHumans = 30;
+
+        Debug.Log($"[BEFORE TEST] Current Era: {DataStorage.Instance.CurrentEra}");
+
+        OnTriggerEnter2D(null);
+
+        Debug.Log($"[AFTER TEST] Current Era: {DataStorage.Instance.CurrentEra}");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Era Triggered");
-
+        Debug.Log("Current Era: " + DataStorage.Instance.CurrentEra);
+        Debug.Log("OnTrigger era reached");
         if (DataStorage.Instance == null)
         {
-            Debug.LogError("DataStorage.Instance is null! Make sure your ScriptableObject is loaded.");
+            Debug.LogError("DataStorage.Instance is null");
             return;
         }
 
         if (nextEraRequriment != null && nextEraRequriment.ValidateNextEraRequirement(EraRequrimentsById, out EraRequriment nextEra))
         {
             Debug.Log($"Advanced to Era: {DataStorage.Instance.CurrentEra}");   
-            nextEraRequriment = nextEra; // Updated to next requirement (or null if max era reached)
+            nextEraRequriment = nextEra; // Update
         }
         else
         {
