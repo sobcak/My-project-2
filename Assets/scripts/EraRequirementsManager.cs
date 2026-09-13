@@ -12,6 +12,13 @@ public class EraManager : MonoBehaviour
         EraRequrimentsById.Add(2, new Era2());
         EraRequrimentsById.Add(3, new Era3());
 
+        if (DataStorage.Instance.EraDebug)
+        {
+            DataStorage.Instance.Well = true;
+            DataStorage.Instance.Furniture = 10;
+            DataStorage.Instance.NumberOfHumans = 30;
+        }
+
         if (EraRequrimentsById.ContainsKey(DataStorage.Instance.CurrentEra))
         {
             nextEraRequriment = EraRequrimentsById[DataStorage.Instance.CurrentEra];

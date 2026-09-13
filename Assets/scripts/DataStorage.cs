@@ -3,6 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DataStorage", menuName = "Scriptable Objects/DataStorage")]
 public class DataStorage : ScriptableObject
 {
+    // DEBUG
+    public bool EraDebug = true;
+    
+    
     public int MaxResources { get; set; } = 50;
     
     

@@ -72,6 +72,12 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
+
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
+                        break;
+                    }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Housing)))
                     {
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Housing;
@@ -89,6 +95,11 @@ public class PlacingShitCamera : MonoBehaviour
                     tile = Temp.GetComponent<TileManager>();
                     if (tile.TerrainType == TerrainType.Water)
                     {
+                        break;
+                    }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
                         break;
                     }
 
@@ -114,6 +125,11 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
+                        break;
+                    }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Well)))
                     {
                         DataStorage.Instance.Well = true;
@@ -134,6 +150,11 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
+                        break;
+                    }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Forestry)))
                     {
                         Debug.Log("fi");
@@ -148,6 +169,11 @@ public class PlacingShitCamera : MonoBehaviour
                     tile = Temp.GetComponent<TileManager>();
                     if (tile.TerrainType == TerrainType.Water)
                     {
+                        break;
+                    }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
                         break;
                     }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Saw)))
@@ -165,6 +191,11 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
+                        break;
+                    }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Workshop)))
                     {
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
@@ -176,12 +207,18 @@ public class PlacingShitCamera : MonoBehaviour
                     break;
                 case ("Mine"):
                     tile = Temp.GetComponent<TileManager>();
+                    
                     if (tile.TerrainType == TerrainType.Water)
                     {
                         break;
                     }
                     if (tile.TerrainType == TerrainType.Grass)
                     {
+                        break;
+                    }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
                         break;
                     }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Mine)))
@@ -200,6 +237,11 @@ public class PlacingShitCamera : MonoBehaviour
                     tile = Temp.GetComponent<TileManager>();
                     if (tile.TerrainType == TerrainType.Water)
                     {
+                        break;
+                    }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
                         break;
                     }
                     
@@ -222,6 +264,11 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
+                        break;
+                    }
 
 
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Smelter)))
@@ -240,6 +287,11 @@ public class PlacingShitCamera : MonoBehaviour
                     tile = Temp.GetComponent<TileManager>();
                     if (tile.TerrainType == TerrainType.Water)
                     {
+                        break;
+                    }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
                         break;
                     }
 
@@ -261,6 +313,11 @@ public class PlacingShitCamera : MonoBehaviour
                     tile = Temp.GetComponent<TileManager>();
                     if (tile.TerrainType == TerrainType.Water)
                     {
+                        break;
+                    }
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
                         break;
                     }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.School)))

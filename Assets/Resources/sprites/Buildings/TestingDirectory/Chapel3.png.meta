@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8cceff8f9c51c3a48876d5fe998c3d53
+guid: 441fbd98237f1b64f875c69048583987
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4463801170981161794
-    second: Forestery3_0
+      213: -3125154002315314621
+    second: Chaple3_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,14 +46,14 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
-  spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMode: 1
+  spriteExtrude: 0
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 1
+  spriteGenerateFallbackPhysicsShape: 0
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationMethod: 0
@@ -115,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Forestery3_0
+      name: Chaple3_0
       rect:
         serializedVersion: 2
         x: 2
         y: 2
-        width: 28
-        height: 25
+        width: 27
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 24b0e48c38b92fd30800000000000000
-      internalID: 4463801170981161794
+      spriteID: 34afa9f1ef831a4d0800000000000000
+      internalID: -3125154002315314621
       vertices: []
       indices: 
       edges: []
@@ -140,7 +140,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -150,7 +150,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Forestery3_0: 4463801170981161794
+      Chaple3_0: -3125154002315314621
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
