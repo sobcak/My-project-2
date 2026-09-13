@@ -14,8 +14,9 @@ public class DataStorage : ScriptableObject
 
 
     // Constructed important buildings
-    public bool Chapple = true;
+    public bool Chapple;
     public bool School;
+    public bool Well;
 
     // Global static reference
     public static DataStorage Instance { get; private set; }
@@ -28,10 +29,12 @@ public class DataStorage : ScriptableObject
 
     public int Stone = 50;
     public int Wood = 50;
-    public int brick;
+    public int brick = 0;
 
     // Luxury
     public int Furniture = 0;
+    public int Tools = 0;
+    
     
     public static void Initialize(DataStorage asset)
     {

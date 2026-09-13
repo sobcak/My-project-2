@@ -8,32 +8,34 @@ public class EraManager : MonoBehaviour
 
     void Start()
     {
-        // Populate requirements
         EraRequrimentsById.Add(1, new Era1());
         EraRequrimentsById.Add(2, new Era2());
+        EraRequrimentsById.Add(3, new Era3());
 
-        if (EraRequrimentsById.ContainsKey(1))
+        if (EraRequrimentsById.ContainsKey(DataStorage.Instance.CurrentEra))
         {
-            nextEraRequriment = EraRequrimentsById[1];
+            nextEraRequriment = EraRequrimentsById[DataStorage.Instance.CurrentEra];
+            transmitSignal.TriggerCommand();
         }
         
-        transform.position = new Vector2(5025, 5025);
+
+        Debug.Log($"[BEFORE TEST] Current Era: {DataStorage.Instance.CurrentEra}");
+        OnTriggerEnter2D(null);
+        Debug.Log($"[AFTER TEST] Current Era: {DataStorage.Instance.CurrentEra}");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Era Triggered");
-
         if (DataStorage.Instance == null)
         {
-            Debug.LogError("DataStorage.Instance is null! Make sure your ScriptableObject is loaded.");
+            Debug.LogError("DataStorage.Instance is null fuck my life");
             return;
         }
 
         if (nextEraRequriment != null && nextEraRequriment.ValidateNextEraRequirement(EraRequrimentsById, out EraRequriment nextEra))
         {
             Debug.Log($"Advanced to Era: {DataStorage.Instance.CurrentEra}");   
-            nextEraRequriment = nextEra; // Updated to next requirement (or null if max era reached)
+            nextEraRequriment = nextEra;
         }
         else
         {
@@ -47,16 +49,29 @@ public abstract class EraRequriment
     public int EraId { get; protected set; }
     public int FurnitureNeeded { get; protected set; }
     public int HumanNeeded { get; protected set; }
+    public int FoodNeeded { get; protected set; }
+    public int ToolsNeeded { get; protected set; }
+    
+    public bool WellNeeded { get; protected set; }
+    public bool ChappleNeeded { get; protected set; }
+    public bool SchoolNeeded { get; protected set; }
 
     public virtual bool ValidateNextEraRequirement(Dictionary<int, EraRequriment> requirements, out EraRequriment nextEra)
     {
         nextEra = null;
-        Debug.Log("era"+ DataStorage.Instance.CurrentEra + "Furniture" + DataStorage.Instance.Furniture + "Human" + DataStorage.Instance.NumberOfHumans);
 
-        if (DataStorage.Instance.Furniture >= FurnitureNeeded && DataStorage.Instance.NumberOfHumans >= HumanNeeded)
+        bool resourcesMet = DataStorage.Instance.Furniture >= FurnitureNeeded &&
+                             DataStorage.Instance.NumberOfHumans >= HumanNeeded &&
+                             DataStorage.Instance.Tools >= ToolsNeeded &&
+                             DataStorage.Instance.AvailableFood >= FoodNeeded;
+
+        bool buildingsMet = (!WellNeeded || DataStorage.Instance.Well) &&
+                            (!ChappleNeeded || DataStorage.Instance.Chapple) &&
+                            (!SchoolNeeded || DataStorage.Instance.School);
+
+        if (resourcesMet && buildingsMet)
         {
             DataStorage.Instance.CurrentEra = EraId + 1;
-            
             requirements.TryGetValue(EraId + 1, out nextEra);
             return true;
         }
@@ -72,6 +87,7 @@ public class Era1 : EraRequriment
         EraId = 1;
         FurnitureNeeded = 10;
         HumanNeeded = 30;
+        WellNeeded = true;
     }
 }
 
@@ -81,7 +97,9 @@ public class Era2 : EraRequriment
     {
         EraId = 2;
         FurnitureNeeded = 20;
+        ToolsNeeded = 30;
         HumanNeeded = 50;
+        ChappleNeeded = true;
     }
 }
 
@@ -90,7 +108,9 @@ public class Era3 : EraRequriment
     public Era3()
     {
         EraId = 3;
-        FurnitureNeeded = 20;
-        HumanNeeded = 60;
+        FurnitureNeeded = 40;
+        ToolsNeeded = 45;
+        HumanNeeded = 70;
+        SchoolNeeded = true;
     }
 }

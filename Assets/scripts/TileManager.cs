@@ -22,7 +22,23 @@ public class TileManager : MonoBehaviour
         
     }
 
+    private void OnEnable()
+    {
+        // Přihlášení k odběru události (nahraďte NázevVasiTridy názvem třídy, kde je event definován, pokud je static)
+        transmitSignal.OnCommandExecuted += HandleCommand;
+    }
 
+    private void OnDisable()
+    {
+        // Vždy odhlaste událost při vypnutí objektu, abyste předešli chybným odkazům v paměti
+        transmitSignal.OnCommandExecuted -= HandleCommand;
+    }
+
+    // Tato metoda se zavolá při přijetí signálu
+    private void HandleCommand()
+    {
+        UpdateBuilding();
+    }
     public void UpdateBuilding()
     {
         if (HasBuilding)
@@ -42,6 +58,7 @@ public class TileManager : MonoBehaviour
     void SetSpriteForBuilding(BuildingType buildingType) // set the sprite of the buildingDisplayer with spriterenderer to some sprite at specific location
     {
         spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Buildings/TestingDirectory/{BuildingType}{DataStorage.Instance.CurrentEra}");
+        Debug.Log($"sprites/Buildings/TestingDirectory/{BuildingType}{DataStorage.Instance.CurrentEra}");
     }
 
    
@@ -68,6 +85,7 @@ public enum BuildingType
     Well,
     School,
     Smelter,
+    Chapel
 }
 
 public enum SubType

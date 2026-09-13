@@ -22,9 +22,15 @@ MonoBehaviour:
   m_AdditionalPlatformBuildSettings: []
   m_OverrideGlobalSceneList: 1
   m_Scenes:
-  - m_enabled: 0
-    m_path: Assets/Scenes/test_scena.unity
-    m_guid: f9c1b672c9cc5244ba0db5c2f7a33424
+  - m_enabled: 1
+    m_path: Assets/Scenes/MainMenu.unity
+    m_guid: 3460ddab753843dfbb1a7e0c4b53807c
+  - m_enabled: 1
+    m_path: Assets/Scenes/backupProDavida.unity
+    m_guid: f3190e11a7f95ee348fdbfdc63d4779d
+  - m_enabled: 1
+    m_path: Assets/Scenes/Credits.unity
+    m_guid: a2f3a9c106169393e9f965dcc9025f68
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:

@@ -5,13 +5,13 @@ public record Building
 {
     public BuildingType BuildingType { get; set; }
     public SubType SubType { get; set; }
-    public (int Wood, int Stone, int Bricks) MaterialCost { get; set; } = (0, 0, 0);
+    public (int Wood, int Stone, int Bricks, int Furniture, int Tools) MaterialCost { get; set; } = (0, 0, 0, 0, 0);
     
     // Required to run
     public (int Wood, int Stone, int Bricks) MaterialToRun { get; set; } = (0, 0, 0);
     
     // Produces
-    public (int Wood, int Stone, int Bricks, int Food) MaterialProduction { get; set; } = (0, 0, 0, 0);
+    public (int Wood, int Stone, int Bricks, int Food, int Furniture, int Tools) MaterialProduction { get; set; } = (0, 0, 0, 0, 0, 0);
     
     // Workers
     public int DesiredWorkforce { get; set; } = 0;
@@ -33,9 +33,9 @@ public static class BuildingFactory
     {
         BuildingType = BuildingType.Farm,
         SubType = SubType.Production,
-        MaterialCost = (Wood: 10, Stone: 5, Bricks: 0),
+        MaterialCost = (Wood: 10, Stone: 5, Bricks: 0, Furniture: 0, Tools: 0),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
-        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 2),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 4, Furniture: 0, Tools: 0),
         DesiredWorkforce = 5,
         CurrentWorkforce = 0,
         Priority = 1,
@@ -47,9 +47,9 @@ public static class BuildingFactory
     {
         BuildingType = BuildingType.Forestry,
         SubType = SubType.Production,
-        MaterialCost = (Wood: 5, Stone: 5, Bricks: 0),
+        MaterialCost = (Wood: 5, Stone: 5, Bricks: 0,Furniture:0 , Tools: 0),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
-        MaterialProduction = (Wood: 3, Stone: 0, Bricks: 0, Food: 0),
+        MaterialProduction = (Wood: 4, Stone: 0, Bricks: 0, Food: 0, Furniture: 0,  Tools: 0),
         DesiredWorkforce = 5,
         CurrentWorkforce = 0,
         Priority = 2,
@@ -61,9 +61,9 @@ public static class BuildingFactory
     {
         BuildingType = BuildingType.Mine,
         SubType = SubType.Production,
-        MaterialCost = (Wood: 10, Stone: 0, Bricks: 0),
+        MaterialCost = (Wood: 10, Stone: 0, Bricks: 0, Furniture: 0, Tools: 0),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
-        MaterialProduction = (Wood: 0, Stone: 3, Bricks: 0, Food: 0),
+        MaterialProduction = (Wood: 0, Stone: 4, Bricks: 0, Food: 0, Furniture: 0, Tools: 0),
         DesiredWorkforce = 5,
         CurrentWorkforce = 0,
         Priority = 2,
@@ -75,9 +75,9 @@ public static class BuildingFactory
     {
         BuildingType = BuildingType.Housing,
         SubType = SubType.Storage,
-        MaterialCost = (Wood: 10, Stone: 5, Bricks: 0),
+        MaterialCost = (Wood: 10, Stone: 5, Bricks: 0, Furniture: 0, Tools: 0),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
-        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 0, Tools: 0),
         DesiredWorkforce = 0,
         CurrentWorkforce = 0,
         Priority = 10,
@@ -89,14 +89,92 @@ public static class BuildingFactory
     {
         BuildingType = BuildingType.Storage,
         SubType = SubType.Storage,
-        MaterialCost = (Wood: 10, Stone: 0, Bricks: 0),
+        MaterialCost = (Wood: 10, Stone: 0, Bricks: 0, Furniture: 0, Tools: 0),
         MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
-        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 0, Tools: 0),
         DesiredWorkforce = 0,
         CurrentWorkforce = 0,
         Priority = 10,
         BonusHousing = 0,
-        BonusSpace = 3 + (2 * DataStorage.Instance.CurrentEra) // scaling 
+        BonusSpace = 5 + (2 * DataStorage.Instance.CurrentEra) // scaling 
+    };
+    public static Building CreateWell() => new Building
+    {
+        BuildingType = BuildingType.Well,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 5, Stone: 10, Bricks: 0, Furniture: 0, Tools: 0),
+        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 1, Furniture: 0, Tools: 0),
+        DesiredWorkforce = 0,
+        CurrentWorkforce = 0,
+        Priority = 10,
+        BonusSpace = 0,
+        BonusHousing = 0
+    };
+    public static Building CreateSaw() => new Building
+    {
+        BuildingType = BuildingType.Saw,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 10, Stone: 5, Bricks: 5, Furniture: 0, Tools: 0),
+        MaterialToRun = (Wood: 5, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 1, Tools: 0),
+        DesiredWorkforce = 5,
+        CurrentWorkforce = 0,
+        Priority = 2,
+        BonusSpace = 0,
+        BonusHousing = 0
+    };
+    public static Building CreateWorkshop() => new Building
+    {
+        BuildingType = BuildingType.Workshop,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 10, Stone: 10, Bricks: 10, Furniture: 0, Tools: 0),
+        MaterialToRun = (Wood: 5, Stone: 2, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 0, Tools: 2),
+        DesiredWorkforce = 5,
+        CurrentWorkforce = 0,
+        Priority = 2,
+        BonusSpace = 0,
+        BonusHousing = 0
+    };
+    public static Building CreateSmelter() => new Building
+    {
+        BuildingType = BuildingType.Smelter,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 10, Stone: 10, Bricks: 0, Furniture: 0, Tools: 0),
+        MaterialToRun = (Wood: 0, Stone: 2, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 2, Food: 0, Furniture: 0, Tools: 0),
+        DesiredWorkforce = 5,
+        CurrentWorkforce = 0,
+        Priority = 2,
+        BonusSpace = 0,
+        BonusHousing = 0
+    };
+    public static Building CreateChapel() => new Building
+    {
+        BuildingType = BuildingType.Chapel,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 10, Stone: 20, Bricks: 10, Furniture: 5, Tools: 5),
+        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 0, Tools: 0),
+        DesiredWorkforce = 0,
+        CurrentWorkforce = 0,
+        Priority = 10,
+        BonusSpace = 0,
+        BonusHousing = 0
+    };
+    public static Building CreateSchool() => new Building
+    {
+        BuildingType = BuildingType.School,
+        SubType = SubType.Storage,
+        MaterialCost = (Wood: 20, Stone: 20, Bricks: 20, Furniture: 10, Tools: 10),
+        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 0, Tools: 0),
+        DesiredWorkforce = 0,
+        CurrentWorkforce = 0,
+        Priority = 10,
+        BonusSpace = 0,
+        BonusHousing = 0
     };
 }
 
