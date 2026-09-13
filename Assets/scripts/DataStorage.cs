@@ -4,7 +4,7 @@ using UnityEngine;
 public class DataStorage : ScriptableObject
 {
     // DEBUG
-    public bool EraDebug = false;
+    public bool EraDebug = false; // Debug set true only when debuging or it will break the fucking game !!!!!!!!!!!!!!!!!!!!!!!
     
     
     public int MaxResources { get; set; } = 50;
@@ -13,6 +13,8 @@ public class DataStorage : ScriptableObject
     /// <summary>
     /// Important
     public int CurrentEra = 1;
+
+    public bool WonGame => CurrentEra == 4;
 
     /// </summary>
 
