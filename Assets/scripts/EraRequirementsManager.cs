@@ -17,13 +17,6 @@ public class EraManager : MonoBehaviour
             nextEraRequriment = EraRequrimentsById[DataStorage.Instance.CurrentEra];
         }
         
-        
-        //TODO REMOVE THIS SHIT
-        
-        // Cheated Variables
-        DataStorage.Instance.Furniture = 10;
-        DataStorage.Instance.NumberOfHumans = 30;
-        DataStorage.Instance.Well = true;
 
         Debug.Log($"[BEFORE TEST] Current Era: {DataStorage.Instance.CurrentEra}");
         OnTriggerEnter2D(null);
