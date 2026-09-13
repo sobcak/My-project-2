@@ -61,7 +61,7 @@ public class BuildingManager : MonoBehaviour
                 DataStorage.Instance.Stone += stoneToAdd;
 
                 //smelter shitty code
-                int brickToAdd = (int)Math.Floor((double)b.MaterialProduction.Bricks * b.CurrentWorkforce / b.DesiredWorkforce * bonusScaling);
+                int brickToAdd = (int)Math.Floor((double)b.MaterialProduction.Bricks *(b.CurrentWorkforce / b.DesiredWorkforce) * bonusScaling);
                 DataStorage.Instance.brick += brickToAdd;
 
                 int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce * bonusScaling;
@@ -82,11 +82,13 @@ public class BuildingManager : MonoBehaviour
     static bool TryToBuild(Building b)
     {
         if (DataStorage.Instance.Wood >= b.MaterialCost.Wood && DataStorage.Instance.Stone >= b.MaterialCost.Stone &&
-            DataStorage.Instance.brick >= b.MaterialCost.Bricks)
+            DataStorage.Instance.brick >= b.MaterialCost.Bricks && DataStorage.Instance.Furniture >= b.MaterialCost.Furniture && DataStorage.Instance.Tools >= b.MaterialCost.Tools)
         {
             DataStorage.Instance.Wood -= b.MaterialCost.Wood;
             DataStorage.Instance.Stone -= b.MaterialCost.Stone;
             DataStorage.Instance.brick -= b.MaterialCost.Bricks;
+            DataStorage.Instance.Furniture -= b.MaterialCost.Furniture;
+            DataStorage.Instance.Tools -= b.MaterialCost.Tools;
 
             // Add bonus space for storage
             Debug.Log("suck");
