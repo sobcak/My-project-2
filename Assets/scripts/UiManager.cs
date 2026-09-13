@@ -13,6 +13,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Woodtext;
     [SerializeField] private TextMeshProUGUI Bricktext;
     [SerializeField] private TextMeshProUGUI Tooltext;
+    [SerializeField] private TextMeshProUGUI Furrytext;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,6 +33,8 @@ public class UiManager : MonoBehaviour
         Woodtext.text = $"Wood: {dataStorage.Wood.ToString()}";
         Bricktext.text = $"Bricks: {dataStorage.brick.ToString()}";
         Tooltext.text = $"Tools: {dataStorage.Tools.ToString()}";
+        Furrytext.text = $"Furniture: {dataStorage.Furniture.ToString()}";
+
 
     }
 }
