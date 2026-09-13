@@ -38,7 +38,7 @@ public class DontEvenFuckinOpenThisFile : MonoBehaviour
             giusgbkjsbj = true;
 
         }
-        if (indexm == 12)
+        if (indexm == 13)
         {
             b.SetActive(true);
         }
@@ -46,7 +46,7 @@ public class DontEvenFuckinOpenThisFile : MonoBehaviour
     }
     public void Forward()
     {
-        if(indexm == 12)
+        if(indexm == 13)
         {
             b.SetActive(true);
         }
