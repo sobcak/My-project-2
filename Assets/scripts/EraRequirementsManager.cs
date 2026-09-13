@@ -58,6 +58,10 @@ public abstract class EraRequriment
     public int EraId { get; protected set; }
     public int FurnitureNeeded { get; protected set; }
     public int HumanNeeded { get; protected set; }
+    
+    public int FoodNeeded { get; protected set; }
+    
+    public int ToolsNeeded { get; protected set; }
 
     public virtual bool ValidateNextEraRequirement(Dictionary<int, EraRequriment> requirements, out EraRequriment nextEra)
     {
