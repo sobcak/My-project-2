@@ -11,6 +11,7 @@ public class EraManager : MonoBehaviour
     {
         
         transform.position = new Vector2(5025,5025);
+        
         EraRequrimentsById.Add(1, new Era1());
         EraRequrimentsById.Add(2, new Era2());
         EraRequrimentsById.Add(3, new Era3());
