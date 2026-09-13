@@ -386,9 +386,9 @@ MonoBehaviour:
   HasBuilding: {fileID: 3277315248878847974}
   TerrainType2: {fileID: 8157723475049644074}
   BuidlingType: {fileID: 8969945697002313775}
-  Source: {fileID: 0}
-  Place: {fileID: 0}
-  Info: {fileID: 0}
+  Source: {fileID: 2066713271}
+  Place: {fileID: 8300000, guid: 6f435e8ab082521488b6051509d86327, type: 3}
+  Info: {fileID: 8300000, guid: b8e76e91c8b233643809ac189416dcf8, type: 3}
 --- !u!4 &326579176
 Transform:
   m_ObjectHideFlags: 0
