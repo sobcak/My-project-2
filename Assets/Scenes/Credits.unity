@@ -571,7 +571,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Credits\nOliver Sob\u010D\xE1k\nLos Davidos\nLa \u0160krna\nRichard Jarom\xEDr Sprite Divi\u0161\nErdyc\nJohn Friy\u0161 - git fetch\nOndr\xE1\u0161\n\nAssets\n------------------------------\nhttps://pixabay.com/music/upbeat-why-bother-221159/\nhttps://pixabay.com/music/bossa-nova-youx27re-gonna-like-it-here-469728/\nhttps://pixabay.com/music/video-games-videogame-queue-music-274211/\nhttps://pixabay.com/music/soft-house-in-black-and-white-218868/\nhttps://scrabling.itch.io/pixel-isometric-tiles\n"
+  m_text: "Credits\nOliver Sob\u010D\xE1k\nLos Davidos\nLa \u0160krna\nRichard Jarom\xEDr Sprite Divi\u0161\nErdyc\nJohn Friy\u0161 - git fetch\nOndr\xE1\u0161\n\nAssets\n------------------------------\nhttps://pixabay.com/music/upbeat-why-bother-221159/\nhttps://pixabay.com/music/bossa-nova-youx27re-gonna-like-it-here-469728/\nhttps://pixabay.com/music/video-games-videogame-queue-music-274211/\nhttps://pixabay.com/music/soft-house-in-black-and-white-218868/\nhttps://scrabling.itch.io/pixel-isometric-tiles\nmy deer friend nokotan\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
