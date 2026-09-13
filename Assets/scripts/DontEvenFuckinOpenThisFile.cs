@@ -40,12 +40,29 @@ public class DontEvenFuckinOpenThisFile : MonoBehaviour
     }
     public void Forward()
     {
-        indexm = indexm + 1;
+        if(indexm == 12)
+        {
+
+        }
+        else
+        {
+            indexm = indexm + 1;
+        }
+        
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Tutorial Pages/{indexm}");
     }
     public void Backward()
     {
-        indexm = indexm - 1;
+        if (indexm == 1  || indexm == 0)
+        {
+
+        }
+        else
+        {
+            indexm = indexm - 1;
+        }
+
+        
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Tutorial Pages/{indexm}");
     }
 }
