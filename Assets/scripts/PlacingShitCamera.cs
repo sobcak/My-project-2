@@ -116,6 +116,7 @@ public class PlacingShitCamera : MonoBehaviour
                     }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Well)))
                     {
+                        DataStorage.Instance.Well = true;
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Well;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
@@ -245,6 +246,7 @@ public class PlacingShitCamera : MonoBehaviour
 
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Chapel)))
                     {
+                        DataStorage.Instance.Chapple = true;
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Chapel;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
