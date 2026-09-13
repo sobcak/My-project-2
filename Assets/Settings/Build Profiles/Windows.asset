@@ -21,7 +21,10 @@ MonoBehaviour:
   m_ActivePlatformGuid: 
   m_AdditionalPlatformBuildSettings: []
   m_OverrideGlobalSceneList: 1
-  m_Scenes: []
+  m_Scenes:
+  - m_enabled: 1
+    m_path: Assets/Scenes/backupProDavida.unity
+    m_guid: f3190e11a7f95ee348fdbfdc63d4779d
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
