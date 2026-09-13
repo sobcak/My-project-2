@@ -57,7 +57,7 @@ public class BuildingManager : MonoBehaviour
 
                 // Add production output scaled by workforce and era
                 
-                Debug.Log(DataStorage.Instance.Wood);
+                Debug.Log("Here");
 
                 int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.Wood += woodToAdd;
@@ -65,6 +65,8 @@ public class BuildingManager : MonoBehaviour
                 DataStorage.Instance.Stone += stoneToAdd;
                 int brickToAdd = b.MaterialProduction.Bricks * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.brick += brickToAdd;
+                Debug.Log(DataStorage.Instance.brick + " brick after");
+
                 int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.AvailableFood += foodToAdd;
                 
