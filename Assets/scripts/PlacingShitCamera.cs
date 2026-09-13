@@ -216,7 +216,7 @@ public class PlacingShitCamera : MonoBehaviour
                     }
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
-                   case ("Smelter"):
+                case ("Smelter"):
                     tile = Temp.GetComponent<TileManager>();
                     if (tile.TerrainType == TerrainType.Water)
                     {
@@ -232,7 +232,7 @@ public class PlacingShitCamera : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log("Not Enough Rescourscess");
+                        Debug.Log("Not Enough Racecourses");
                     }
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
@@ -248,6 +248,25 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         DataStorage.Instance.Chapple = true;
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Chapel;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                    else
+                    {
+                        Debug.Log("Not Enough Rescourscess");
+                    }
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+                case ("School"):
+                    tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.School)))
+                    {
+                        DataStorage.Instance.School = true;
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.School;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
                     }
