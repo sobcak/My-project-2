@@ -27,9 +27,9 @@ public class DataStorage : ScriptableObject
     public int Housing = 0;
     public int Workers;
 
-    public int Stone = 200;
-    public int Wood = 200;
-    public int brick = 200;
+    public int Stone = 50;
+    public int Wood = 50;
+    public int brick = 0;
 
     // Luxury
     public int Furniture = 0;
