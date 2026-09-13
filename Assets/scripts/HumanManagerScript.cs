@@ -10,11 +10,20 @@ public class HumanManagerScript : MonoBehaviour
     {
         transform.position = new Vector2(5015, 5015);
 
+
+        if (DataStorage.Instance.EraDebug)
+        {
+            for (int i = 0; i < 100 ; i++)
+            {
+                CreateStartingAdult(); 
+            }
+        }
         // Populate 
         for (int i = 0; i < 14 ; i++)
         {
             CreateStartingAdult(); 
         }
+        
     
         UpdateWorkerCount();
     }
