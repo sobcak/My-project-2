@@ -22,7 +22,23 @@ public class TileManager : MonoBehaviour
         
     }
 
+    private void OnEnable()
+    {
+        // Přihlášení k odběru události (nahraďte NázevVasiTridy názvem třídy, kde je event definován, pokud je static)
+        transmitSignal.OnCommandExecuted += HandleCommand;
+    }
 
+    private void OnDisable()
+    {
+        // Vždy odhlaste událost při vypnutí objektu, abyste předešli chybným odkazům v paměti
+        transmitSignal.OnCommandExecuted -= HandleCommand;
+    }
+
+    // Tato metoda se zavolá při přijetí signálu
+    private void HandleCommand()
+    {
+        UpdateBuilding();
+    }
     public void UpdateBuilding()
     {
         if (HasBuilding)
