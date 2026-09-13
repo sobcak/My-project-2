@@ -215,6 +215,26 @@ public class PlacingShitCamera : MonoBehaviour
                     }
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
+                   case ("Smelter"):
+                    tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
+
+
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Smelter)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Smelter;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                    else
+                    {
+                        Debug.Log("Not Enough Rescourscess");
+                    }
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
 
             }
 
