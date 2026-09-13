@@ -31,6 +31,9 @@ MonoBehaviour:
   - m_enabled: 1
     m_path: Assets/Scenes/Credits.unity
     m_guid: a2f3a9c106169393e9f965dcc9025f68
+  - m_enabled: 1
+    m_path: Assets/Scenes/Tutorial.unity
+    m_guid: dcd7491f735a18d40b3c4ac8389add88
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:

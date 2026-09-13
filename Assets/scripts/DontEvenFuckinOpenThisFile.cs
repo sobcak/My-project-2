@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DontEvenFuckinOpenThisFile : MonoBehaviour
 {
@@ -71,5 +72,13 @@ public class DontEvenFuckinOpenThisFile : MonoBehaviour
 
         
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Tutorial Pages/{indexm}");
+    }
+    public void GetMeHome()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+    public void GetPlayinBoy()
+    {
+        SceneManager.LoadScene("backupProDavida");
     }
 }
