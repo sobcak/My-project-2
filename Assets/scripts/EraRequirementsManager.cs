@@ -15,6 +15,7 @@ public class EraManager : MonoBehaviour
         if (EraRequrimentsById.ContainsKey(DataStorage.Instance.CurrentEra))
         {
             nextEraRequriment = EraRequrimentsById[DataStorage.Instance.CurrentEra];
+            transmitSignal.TriggerCommand();
         }
         
         // Cheated Variables
