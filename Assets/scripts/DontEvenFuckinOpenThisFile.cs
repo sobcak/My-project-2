@@ -6,7 +6,7 @@ public class DontEvenFuckinOpenThisFile : MonoBehaviour
 
     int indexm = 0;
     bool giusgbkjsbj = true;
-
+    [SerializeField] private GameObject b;
 
     private void Update()
     {
@@ -37,16 +37,22 @@ public class DontEvenFuckinOpenThisFile : MonoBehaviour
             giusgbkjsbj = true;
 
         }
+        if (indexm == 12)
+        {
+            b.SetActive(true);
+        }
+        else { b.SetActive(false); }
     }
     public void Forward()
     {
         if(indexm == 12)
         {
-
+            b.SetActive(true);
         }
         else
         {
             indexm = indexm + 1;
+            b.SetActive(false);
         }
         
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Tutorial Pages/{indexm}");
@@ -55,11 +61,12 @@ public class DontEvenFuckinOpenThisFile : MonoBehaviour
     {
         if (indexm == 1  || indexm == 0)
         {
-
+            b.SetActive(false);
         }
         else
         {
             indexm = indexm - 1;
+            b.SetActive(false);
         }
 
         
