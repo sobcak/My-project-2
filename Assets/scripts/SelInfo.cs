@@ -46,10 +46,10 @@ public class SelInfo : MonoBehaviour
             Price.text = "Price: Wood: 10, Stone: 10" ;
             break;
             case ("Chapel"):
-            Price.text = "Price: Wood: 10, Stone: 20, Bricks: 10" ;
+            Price.text = "Wood: 10, Stone: 20, Bricks: 10, Furniture: 5, Tools: 5" ;
             break;
             case ("School"):
-            Price.text = "Price: " ;
+            Price.text = "Price: Wood: 30, Stone: 20, Bricks: 20, Furniture: 10, Tools: 10" ;
             break;
         }
     }
