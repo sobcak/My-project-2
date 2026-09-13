@@ -150,6 +150,19 @@ public static class BuildingFactory
         BonusSpace = 0,
         BonusHousing = 0
     };
+    public static Building CreateChapel() => new Building
+    {
+        BuildingType = BuildingType.Smelter,
+        SubType = SubType.Production,
+        MaterialCost = (Wood: 10, Stone: 20, Bricks: 10),
+        MaterialToRun = (Wood: 0, Stone: 0, Bricks: 0),
+        MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 0, Tools: 0),
+        DesiredWorkforce = 0,
+        CurrentWorkforce = 0,
+        Priority = 10,
+        BonusSpace = 0,
+        BonusHousing = 0
+    };
 }
 
 

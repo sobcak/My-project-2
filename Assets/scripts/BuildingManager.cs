@@ -130,6 +130,8 @@ public class BuildingManager : MonoBehaviour
                 return BuildingFactory.CreateSmelter();
             case BuildingType.Workshop:
                 return BuildingFactory.CreateWorkshop();
+            case BuildingType.Chapel:
+                return BuildingFactory.CreateChapel();
             default:
                 return null;
         }
