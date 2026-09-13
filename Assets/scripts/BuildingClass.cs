@@ -118,9 +118,9 @@ public static class BuildingFactory
         MaterialCost = (Wood: 10, Stone: 5, Bricks: 5),
         MaterialToRun = (Wood: 5, Stone: 0, Bricks: 0),
         MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 1, Tools: 0),
-        DesiredWorkforce = 0,
+        DesiredWorkforce = 5,
         CurrentWorkforce = 0,
-        Priority = 10,
+        Priority = 2,
         BonusSpace = 0,
         BonusHousing = 0
     };
@@ -131,9 +131,9 @@ public static class BuildingFactory
         MaterialCost = (Wood: 10, Stone: 10, Bricks: 10),
         MaterialToRun = (Wood: 5, Stone: 2, Bricks: 0),
         MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 0, Tools: 2),
-        DesiredWorkforce = 0,
+        DesiredWorkforce = 5,
         CurrentWorkforce = 0,
-        Priority = 10,
+        Priority = 2,
         BonusSpace = 0,
         BonusHousing = 0
     };
@@ -144,9 +144,9 @@ public static class BuildingFactory
         MaterialCost = (Wood: 10, Stone: 10, Bricks: 0),
         MaterialToRun = (Wood: 0, Stone: 2, Bricks: 0),
         MaterialProduction = (Wood: 0, Stone: 0, Bricks: 2, Food: 0, Furniture: 0, Tools: 0),
-        DesiredWorkforce = 0,
+        DesiredWorkforce = 5,
         CurrentWorkforce = 0,
-        Priority = 10,
+        Priority = 1,
         BonusSpace = 0,
         BonusHousing = 0
     };

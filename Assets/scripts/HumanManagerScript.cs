@@ -95,7 +95,7 @@ public class HumanManagerScript : MonoBehaviour
             int pairs = DataStorage.Instance.Workers / 2;  // workers are adults kind of 
             for (int i = 0; i < pairs; i++)
             {
-                int kid = Random.Range(0, 4);
+                int kid = Random.Range(1, 4);
                 if (kid == 3)
                 {
                     CreateHuman();

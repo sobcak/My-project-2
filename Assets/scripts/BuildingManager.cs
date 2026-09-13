@@ -59,11 +59,14 @@ public class BuildingManager : MonoBehaviour
                 
                 Debug.Log("Here");
 
-                int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce * bonusScaling;
+                int woodToAdd = (int)Math.Floor((double)b.MaterialProduction.Wood * b.CurrentWorkforce / b.DesiredWorkforce * bonusScaling);
                 DataStorage.Instance.Wood += woodToAdd;
-                int stoneToAdd = b.MaterialProduction.Stone * b.CurrentWorkforce * bonusScaling;
+                int stoneToAdd = (int)Math.Floor((double)b.MaterialProduction.Stone * b.CurrentWorkforce / b.DesiredWorkforce * bonusScaling);
                 DataStorage.Instance.Stone += stoneToAdd;
-                int brickToAdd = b.MaterialProduction.Bricks * b.CurrentWorkforce * bonusScaling;
+                int brickToAdd = (int)Math.Floor((double)2 * b.CurrentWorkforce / b.DesiredWorkforce * bonusScaling); //there is a constant 2 for the time being i will fix it in the morning it works this way
+               /* Debug.Log(brickToAdd.ToString() +"hereous");
+                Debug.Log(b.MaterialProduction.Bricks+"bricky");
+                Debug.Log(b.CurrentWorkforce + "   hereous2" + b.MaterialProduction.Bricks);*/
                 DataStorage.Instance.brick += brickToAdd;
                 Debug.Log(DataStorage.Instance.brick + " brick after");
 

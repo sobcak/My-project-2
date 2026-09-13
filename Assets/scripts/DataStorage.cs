@@ -28,7 +28,7 @@ public class DataStorage : ScriptableObject
 
     public int Stone = 50;
     public int Wood = 50;
-    public int brick;
+    public int brick = 0;
 
     // Luxury
     public int Furniture = 0;
