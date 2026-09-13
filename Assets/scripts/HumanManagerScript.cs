@@ -21,7 +21,6 @@ public class HumanManagerScript : MonoBehaviour
     
     void UpdateWorkerCount()
     {
-        // Assuming your Human class has an 'Adult' boolean
         DataStorage.Instance.Workers = humanRegistry.Count(h => h.Adult); 
         DataStorage.Instance.NumberOfHumans = humanRegistry.Count;
         Debug.Log($"Worker Count Updated! Total Humans: {DataStorage.Instance.NumberOfHumans}, Total Workers: {DataStorage.Instance.Workers}");
@@ -31,10 +30,11 @@ public class HumanManagerScript : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Triggered overlap with: " + other.name);
-
+        UpdateWorkerCount();
+        HaveKids();
         KillOldHuman();
         Age();
-        HaveKids();
+        
     }
     
     void CreateStartingAdult()
