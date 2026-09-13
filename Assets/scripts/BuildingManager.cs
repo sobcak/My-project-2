@@ -61,12 +61,17 @@ public class BuildingManager : MonoBehaviour
 
                 int woodToAdd = b.MaterialProduction.Wood * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.Wood += woodToAdd;
-                Debug.Log("Wood to Add " +  woodToAdd);
                 int stoneToAdd = b.MaterialProduction.Stone * b.CurrentWorkforce * bonusScaling;
                 DataStorage.Instance.Stone += stoneToAdd;
-                DataStorage.Instance.brick += b.MaterialProduction.Bricks * b.CurrentWorkforce * bonusScaling;
-                DataStorage.Instance.AvailableFood += b.MaterialProduction.Food * b.CurrentWorkforce * bonusScaling;
+                int brickToAdd = b.MaterialProduction.Bricks * b.CurrentWorkforce * bonusScaling;
+                DataStorage.Instance.brick += brickToAdd;
+                int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce * bonusScaling;
+                DataStorage.Instance.AvailableFood += foodToAdd;
                 
+                int toolsToAdd = b.MaterialProduction.Tools * b.CurrentWorkforce * bonusScaling;
+                DataStorage.Instance.Tools += toolsToAdd;
+                int furnitureToAdd = b.MaterialProduction.Furniture * b.CurrentWorkforce * bonusScaling;
+                DataStorage.Instance.Furniture += furnitureToAdd;
                 Debug.Log(DataStorage.Instance.Wood + " wood after");
 
             }
@@ -121,6 +126,10 @@ public class BuildingManager : MonoBehaviour
                 return BuildingFactory.CreateWell();
             case BuildingType.Saw:
                 return BuildingFactory.CreateSaw();
+            case BuildingType.Smelter:
+                return BuildingFactory.CreateSmelter();
+            case BuildingType.Workshop:
+                return BuildingFactory.CreateWorkshop();
             default:
                 return null;
         }
