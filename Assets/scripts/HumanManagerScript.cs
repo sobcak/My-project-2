@@ -90,7 +90,7 @@ public class HumanManagerScript : MonoBehaviour
         float housingRequirement = DataStorage.Instance.NumberOfHumans * 1.1f;
 
         if (DataStorage.Instance.AvailableFood > foodRequirement && 
-            DataStorage.Instance.AvailableHousing > housingRequirement)
+            DataStorage.Instance.Housing > housingRequirement)
         {
             int pairs = DataStorage.Instance.Workers / 2;  // workers are adults kind of 
             for (int i = 0; i < pairs; i++)
