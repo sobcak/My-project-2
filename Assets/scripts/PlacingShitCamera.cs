@@ -72,6 +72,12 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
+
+                    if (tile.HasBuilding == true)
+                    {
+                        Debug.Log("Has Building Already");
+                        break;
+                    }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Housing)))
                     {
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Housing;
