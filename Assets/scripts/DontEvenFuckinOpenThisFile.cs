@@ -5,18 +5,37 @@ public class DontEvenFuckinOpenThisFile : MonoBehaviour
 
 
     int indexm = 0;
-
+    bool giusgbkjsbj = true;
 
 
     private void Update()
     {
-        if (Input.GetKey("left"))
+        if (Input.GetKeyDown("right"))
         {
-            Forward();
+            if (giusgbkjsbj)
+            {
+                Forward();
+                giusgbkjsbj = false;
+            }
+            
         }
-        if (Input.GetKey("right"))
+        if (Input.GetKeyDown("left"))
         {
-            Forward();
+            if (giusgbkjsbj)
+            {
+                Backward();
+                giusgbkjsbj = false;
+            }
+        }
+        if (Input.GetKeyUp("right"))
+        {
+            giusgbkjsbj = true;
+
+        }
+        if (Input.GetKeyUp("left"))
+        {
+            giusgbkjsbj = true;
+
         }
     }
     public void Forward()
