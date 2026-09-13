@@ -14,12 +14,14 @@ public class PlacingShitCamera : MonoBehaviour
     [SerializeField] private Text HasBuilding;
     [SerializeField] private Text TerrainType2;
     [SerializeField] private Text BuidlingType;
-    
+    public AudioSource Source;
+    public AudioClip Place;
+    public AudioClip Info;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
+        
         if(mainCamera == null)
         {
             Debug.Log("camera");
@@ -41,10 +43,18 @@ public class PlacingShitCamera : MonoBehaviour
 
             Debug.Log("World Position: " + mouseWorldPos);
             GameObject Temp = ClosestOb(mouseWorldPos);
-            RightClickInfoCanvas.SetActive(true);
-            HasBuilding.text = Temp.GetComponent<TileManager>().HasBuilding.ToString();
-            TerrainType2.text = Temp.GetComponent<TileManager>().TerrainType.ToString();
-            BuidlingType.text = Temp.GetComponent<TileManager>().BuildingType.ToString();
+            if (Temp == null)
+            {
+
+            }
+            else
+            {
+                RightClickInfoCanvas.SetActive(true);
+                HasBuilding.text = Temp.GetComponent<TileManager>().HasBuilding.ToString();
+                TerrainType2.text = Temp.GetComponent<TileManager>().TerrainType.ToString();
+                BuidlingType.text = Temp.GetComponent<TileManager>().BuildingType.ToString();
+                Source.PlayOneShot(Info);
+            }
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -59,6 +69,11 @@ public class PlacingShitCamera : MonoBehaviour
 
             Debug.Log("World Position: " + mouseWorldPos);
             GameObject Temp = ClosestOb(mouseWorldPos);
+            if(Temp == null)
+            {
+
+            }
+            else { 
             Debug.Log(Temp);
 
             
@@ -83,6 +98,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Housing;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                     else
                     {
@@ -112,6 +128,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Farm;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                     else
                     {
@@ -136,6 +153,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Well;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                     else
                     {
@@ -161,6 +179,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Forestry;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                        
                     LeChoiceSystem.WeBeChoosing = "Nothing";
@@ -182,6 +201,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Saw;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                        
                     LeChoiceSystem.WeBeChoosing = "Nothing";
@@ -202,6 +222,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Workshop;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                     
                     LeChoiceSystem.WeBeChoosing = "Nothing";
@@ -227,6 +248,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                     else
                     {
@@ -252,6 +274,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Storage;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                     else
                     {
@@ -277,6 +300,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Smelter;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                     else
                     {
@@ -303,6 +327,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Chapel;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                     else
                     {
@@ -327,6 +352,7 @@ public class PlacingShitCamera : MonoBehaviour
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.School;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
+                        Source.PlayOneShot(Place);
                     }
                     else
                     {
@@ -335,6 +361,7 @@ public class PlacingShitCamera : MonoBehaviour
                     LeChoiceSystem.WeBeChoosing = "Nothing";
                     break;
 
+            }
             }
 
         }
