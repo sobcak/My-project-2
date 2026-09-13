@@ -4,7 +4,7 @@ public class DontEvenFuckinOpenThisFile : MonoBehaviour
 {
 
 
-    int indexm = 1;
+    int indexm = 0;
     
   public void Forward()
     {
