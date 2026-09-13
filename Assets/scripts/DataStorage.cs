@@ -32,6 +32,8 @@ public class DataStorage : ScriptableObject
 
     // Luxury
     public int Furniture = 0;
+    public int Tools = 0;
+    
     
     public static void Initialize(DataStorage asset)
     {

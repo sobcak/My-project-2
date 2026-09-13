@@ -21,10 +21,7 @@ MonoBehaviour:
   m_ActivePlatformGuid: 
   m_AdditionalPlatformBuildSettings: []
   m_OverrideGlobalSceneList: 1
-  m_Scenes:
-  - m_enabled: 0
-    m_path: Assets/Scenes/test_scena.unity
-    m_guid: f9c1b672c9cc5244ba0db5c2f7a33424
+  m_Scenes: []
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:

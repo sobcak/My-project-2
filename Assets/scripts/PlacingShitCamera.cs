@@ -179,14 +179,33 @@ public class PlacingShitCamera : MonoBehaviour
                     {
                         break;
                     }
-                    tile = Temp.GetComponent<TileManager>();
-                    if (tile.TerrainType == TerrainType.Water)
+                    if (tile.TerrainType == TerrainType.Grass)
                     {
                         break;
                     }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Mine)))
                     {
                         Temp.GetComponent<TileManager>().BuildingType = BuildingType.Mine;
+                        Temp.GetComponent<TileManager>().HasBuilding = true;
+                        Temp.GetComponent<TileManager>().UpdateBuilding();
+                    }
+                    else
+                    {
+                        Debug.Log("Not Enough Rescourscess");
+                    }
+                    LeChoiceSystem.WeBeChoosing = "Nothing";
+                    break;
+                case ("Storage"):
+                    tile = Temp.GetComponent<TileManager>();
+                    if (tile.TerrainType == TerrainType.Water)
+                    {
+                        break;
+                    }
+                    
+
+                    if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Storage)))
+                    {
+                        Temp.GetComponent<TileManager>().BuildingType = BuildingType.Storage;
                         Temp.GetComponent<TileManager>().HasBuilding = true;
                         Temp.GetComponent<TileManager>().UpdateBuilding();
                     }
