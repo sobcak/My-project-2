@@ -174,6 +174,7 @@ public class PlacingShitCamera : MonoBehaviour
                     if (tile.HasBuilding == true)
                     {
                         Debug.Log("Has Building Already");
+                        Debug.Log("Saw");
                         break;
                     }
                     if (BuildingManager.RegisterBuilding(BuildingManager.CreateBuilding(BuildingType.Saw)))
