@@ -7,6 +7,11 @@ public class BuildingManager : MonoBehaviour
 {
     public static List<Building> buildings = new List<Building>();
 
+    void Awake()
+    {
+        buildings.Clear();
+    }
+
     void Start()
     {
         transform.position = new Vector2(5000, 5000);
@@ -34,9 +39,11 @@ public class BuildingManager : MonoBehaviour
     public void GetToWork()
     {
         int bonusScaling = CalculateWorkMultiplier(DataStorage.Instance.CurrentEra);
+        
 
         foreach (Building b in buildings)
         {
+            double workerRatio = (double)b.CurrentWorkforce / b.DesiredWorkforce;
             if (b.CurrentWorkforce <= 0) continue; //skip building without wokres
 
             int requiredWood = b.MaterialToRun.Wood;
@@ -49,9 +56,9 @@ public class BuildingManager : MonoBehaviour
                 DataStorage.Instance.brick >= requiredBrick)
             {
                 //deduct inputs
-                DataStorage.Instance.Wood -= requiredWood;
-                DataStorage.Instance.Stone -= requiredStone;
-                DataStorage.Instance.brick -= requiredBrick;
+                DataStorage.Instance.Wood -= (int)Math.Ceiling(requiredWood * workerRatio);
+                DataStorage.Instance.Stone -= (int)Math.Ceiling(requiredStone * workerRatio);
+                DataStorage.Instance.brick -= (int)Math.Ceiling(requiredBrick * workerRatio);
 
                 //add production outputs 
                 int woodToAdd = (int)Math.Floor((double)b.MaterialProduction.Wood * b.CurrentWorkforce / b.DesiredWorkforce * bonusScaling);
@@ -61,7 +68,7 @@ public class BuildingManager : MonoBehaviour
                 DataStorage.Instance.Stone += stoneToAdd;
 
                 //smelter shitty code
-                int brickToAdd = (int)Math.Floor((double)b.MaterialProduction.Bricks *(b.CurrentWorkforce / b.DesiredWorkforce) * bonusScaling);
+                int brickToAdd = (int)Math.Floor((double)b.MaterialProduction.Bricks *b.CurrentWorkforce / b.DesiredWorkforce * bonusScaling);
                 DataStorage.Instance.brick += brickToAdd;
 
                 int foodToAdd = b.MaterialProduction.Food * b.CurrentWorkforce * bonusScaling;
@@ -141,6 +148,7 @@ public class BuildingManager : MonoBehaviour
     {
         Debug.Log("Entered OnTrigger Building");
         Debug.Log("Current Workers" + DataStorage.Instance.Workers);
+        Debug.Log("Current bricks: " + DataStorage.Instance.brick);
 
         foreach (Building b in buildings)
         {
