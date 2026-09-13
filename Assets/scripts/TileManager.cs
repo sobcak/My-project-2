@@ -58,6 +58,7 @@ public class TileManager : MonoBehaviour
     void SetSpriteForBuilding(BuildingType buildingType) // set the sprite of the buildingDisplayer with spriterenderer to some sprite at specific location
     {
         spawnedObjectPrefab.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>($"sprites/Buildings/TestingDirectory/{BuildingType}{DataStorage.Instance.CurrentEra}");
+        Debug.Log($"sprites/Buildings/TestingDirectory/{BuildingType}{DataStorage.Instance.CurrentEra}");
     }
 
    
