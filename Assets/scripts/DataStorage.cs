@@ -14,8 +14,9 @@ public class DataStorage : ScriptableObject
 
 
     // Constructed important buildings
-    public bool Chapple = true;
+    public bool Chapple;
     public bool School;
+    public bool Well;
 
     // Global static reference
     public static DataStorage Instance { get; private set; }
