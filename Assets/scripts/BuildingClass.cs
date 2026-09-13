@@ -120,7 +120,7 @@ public static class BuildingFactory
         MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 5, Tools: 0),
         DesiredWorkforce = 5,
         CurrentWorkforce = 0,
-        Priority = 2,
+        Priority = 3,
         BonusSpace = 0,
         BonusHousing = 0
     };
@@ -133,7 +133,7 @@ public static class BuildingFactory
         MaterialProduction = (Wood: 0, Stone: 0, Bricks: 0, Food: 0, Furniture: 0, Tools: 2),
         DesiredWorkforce = 5,
         CurrentWorkforce = 0,
-        Priority = 2,
+        Priority = 3,
         BonusSpace = 0,
         BonusHousing = 0
     };
@@ -146,7 +146,7 @@ public static class BuildingFactory
         MaterialProduction = (Wood: 0, Stone: 0, Bricks: 8, Food: 0, Furniture: 0, Tools: 0),
         DesiredWorkforce = 5,
         CurrentWorkforce = 0,
-        Priority = 2,
+        Priority = 3,
         BonusSpace = 0,
         BonusHousing = 0
     };
